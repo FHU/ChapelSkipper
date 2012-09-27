@@ -2,20 +2,30 @@
 //  AppDelegate.m
 //  FHU Chapel Skipper
 //
-//  Created by Richard Simpson on 9/25/12.
+//  Created by Richard Simpson on 9/27/12.
 //  Copyright (c) 2012 Richard Simpson. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "LoginViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        self.viewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController_iPhone" bundle:nil];
+    } else {
+        self.viewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController_iPad" bundle:nil];
+    }
+    self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

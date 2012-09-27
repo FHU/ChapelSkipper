@@ -1,13 +1,13 @@
 //
-//  ViewController.h
+//  LoginViewController.h
 //  FHU Chapel Skipper
 //
-//  Created by Richard Simpson on 9/25/12.
+//  Created by Richard Simpson on 9/27/12.
 //  Copyright (c) 2012 Richard Simpson. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface LoginViewController : UIViewController
 
 @end

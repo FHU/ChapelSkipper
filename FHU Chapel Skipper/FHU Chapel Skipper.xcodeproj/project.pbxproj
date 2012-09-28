@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF1CA232161530010015970A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1CA230161530010015970A /* RootViewController.m */; };
+		AF1CA233161530010015970A /* RootViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF1CA231161530010015970A /* RootViewController_iPhone.xib */; };
+		AF1CA2361615301D0015970A /* RootViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF1CA2351615301D0015970A /* RootViewController_iPad.xib */; };
+		AF1CA2691615EB840015970A /* applyButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AF1CA25A1615EB840015970A /* applyButtonBackground.png */; };
+		AF1CA26A1615EB840015970A /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = AF1CA25B1615EB840015970A /* Background.png */; };
+		AF1CA26B1615EB840015970A /* Background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF1CA25C1615EB840015970A /* Background@2x.png */; };
+		AF1CA26C1615EB840015970A /* captainFreed.png in Resources */ = {isa = PBXBuildFile; fileRef = AF1CA25E1615EB840015970A /* captainFreed.png */; };
+		AF1CA26D1615EB840015970A /* freed.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF1CA25F1615EB840015970A /* freed.jpg */; };
+		AF1CA26E1615EB840015970A /* kcasey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF1CA2601615EB840015970A /* kcasey.jpg */; };
+		AF1CA26F1615EB840015970A /* freedSignature.png in Resources */ = {isa = PBXBuildFile; fileRef = AF1CA2611615EB840015970A /* freedSignature.png */; };
+		AF1CA2701615EB840015970A /* log.png in Resources */ = {isa = PBXBuildFile; fileRef = AF1CA2621615EB840015970A /* log.png */; };
+		AF1CA2711615EB840015970A /* loginButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AF1CA2631615EB840015970A /* loginButtonBackground.png */; };
+		AF1CA2721615EB840015970A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AF1CA2641615EB840015970A /* logo.png */; };
+		AF1CA2731615EB840015970A /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF1CA2651615EB840015970A /* logo@2x.png */; };
+		AF1CA2741615EB840015970A /* powerButton.png in Resources */ = {isa = PBXBuildFile; fileRef = AF1CA2661615EB840015970A /* powerButton.png */; };
+		AF1CA2751615EB840015970A /* powerButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF1CA2671615EB840015970A /* powerButton@2x.png */; };
+		AF1CA2761615EB840015970A /* speechbubble.png in Resources */ = {isa = PBXBuildFile; fileRef = AF1CA2681615EB840015970A /* speechbubble.png */; };
+		AF1CA27A1615F0AE0015970A /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1CA2781615F0AE0015970A /* HomeViewController.m */; };
+		AF1CA27B1615F0AE0015970A /* HomeViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF1CA2791615F0AE0015970A /* HomeViewController_iPhone.xib */; };
+		AF1CA27D1615F0BE0015970A /* HomeViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF1CA27C1615F0BE0015970A /* HomeViewController_iPad.xib */; };
 		AF2EE8DA1614C810004DADF3 /* LoginViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2EE8D91614C810004DADF3 /* LoginViewController_iPad.xib */; };
 		AF2EE8DE1614C820004DADF3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2EE8DC1614C820004DADF3 /* LoginViewController.m */; };
 		AF2EE8DF1614C820004DADF3 /* LoginViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2EE8DD1614C820004DADF3 /* LoginViewController_iPhone.xib */; };
@@ -65,6 +85,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF1CA22F161530010015970A /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		AF1CA230161530010015970A /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		AF1CA231161530010015970A /* RootViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController_iPhone.xib; sourceTree = "<group>"; };
+		AF1CA2351615301D0015970A /* RootViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController_iPad.xib; sourceTree = "<group>"; };
+		AF1CA25A1615EB840015970A /* applyButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = applyButtonBackground.png; sourceTree = "<group>"; };
+		AF1CA25B1615EB840015970A /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
+		AF1CA25C1615EB840015970A /* Background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background@2x.png"; sourceTree = "<group>"; };
+		AF1CA25E1615EB840015970A /* captainFreed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = captainFreed.png; sourceTree = "<group>"; };
+		AF1CA25F1615EB840015970A /* freed.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = freed.jpg; sourceTree = "<group>"; };
+		AF1CA2601615EB840015970A /* kcasey.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kcasey.jpg; sourceTree = "<group>"; };
+		AF1CA2611615EB840015970A /* freedSignature.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = freedSignature.png; sourceTree = "<group>"; };
+		AF1CA2621615EB840015970A /* log.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = log.png; sourceTree = "<group>"; };
+		AF1CA2631615EB840015970A /* loginButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginButtonBackground.png; sourceTree = "<group>"; };
+		AF1CA2641615EB840015970A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		AF1CA2651615EB840015970A /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		AF1CA2661615EB840015970A /* powerButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = powerButton.png; sourceTree = "<group>"; };
+		AF1CA2671615EB840015970A /* powerButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "powerButton@2x.png"; sourceTree = "<group>"; };
+		AF1CA2681615EB840015970A /* speechbubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speechbubble.png; sourceTree = "<group>"; };
+		AF1CA2771615F0AE0015970A /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		AF1CA2781615F0AE0015970A /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		AF1CA2791615F0AE0015970A /* HomeViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController_iPhone.xib; sourceTree = "<group>"; };
+		AF1CA27C1615F0BE0015970A /* HomeViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController_iPad.xib; sourceTree = "<group>"; };
 		AF2EE8D91614C810004DADF3 /* LoginViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController_iPad.xib; sourceTree = "<group>"; };
 		AF2EE8DB1614C820004DADF3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		AF2EE8DC1614C820004DADF3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -189,6 +231,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF1CA2591615EB840015970A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AF1CA25A1615EB840015970A /* applyButtonBackground.png */,
+				AF1CA25B1615EB840015970A /* Background.png */,
+				AF1CA25C1615EB840015970A /* Background@2x.png */,
+				AF1CA25D1615EB840015970A /* faculty pics */,
+				AF1CA2611615EB840015970A /* freedSignature.png */,
+				AF1CA2621615EB840015970A /* log.png */,
+				AF1CA2631615EB840015970A /* loginButtonBackground.png */,
+				AF1CA2641615EB840015970A /* logo.png */,
+				AF1CA2651615EB840015970A /* logo@2x.png */,
+				AF1CA2661615EB840015970A /* powerButton.png */,
+				AF1CA2671615EB840015970A /* powerButton@2x.png */,
+				AF1CA2681615EB840015970A /* speechbubble.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		AF1CA25D1615EB840015970A /* faculty pics */ = {
+			isa = PBXGroup;
+			children = (
+				AF1CA25E1615EB840015970A /* captainFreed.png */,
+				AF1CA25F1615EB840015970A /* freed.jpg */,
+				AF1CA2601615EB840015970A /* kcasey.jpg */,
+			);
+			path = "faculty pics";
+			sourceTree = "<group>";
+		};
 		AF872E1C1614BFFA00078E58 = {
 			isa = PBXGroup;
 			children = (
@@ -225,12 +296,21 @@
 		AF872E311614BFFA00078E58 /* FHU Chapel Skipper */ = {
 			isa = PBXGroup;
 			children = (
+				AF1CA2591615EB840015970A /* Images */,
 				AF872E3A1614BFFA00078E58 /* AppDelegate.h */,
 				AF872E3B1614BFFA00078E58 /* AppDelegate.m */,
 				AF2EE8DB1614C820004DADF3 /* LoginViewController.h */,
 				AF2EE8DC1614C820004DADF3 /* LoginViewController.m */,
 				AF2EE8DD1614C820004DADF3 /* LoginViewController_iPhone.xib */,
 				AF2EE8D91614C810004DADF3 /* LoginViewController_iPad.xib */,
+				AF1CA22F161530010015970A /* RootViewController.h */,
+				AF1CA230161530010015970A /* RootViewController.m */,
+				AF1CA231161530010015970A /* RootViewController_iPhone.xib */,
+				AF1CA2351615301D0015970A /* RootViewController_iPad.xib */,
+				AF1CA2771615F0AE0015970A /* HomeViewController.h */,
+				AF1CA2781615F0AE0015970A /* HomeViewController.m */,
+				AF1CA2791615F0AE0015970A /* HomeViewController_iPhone.xib */,
+				AF1CA27C1615F0BE0015970A /* HomeViewController_iPad.xib */,
 				AF872E661614C32E00078E58 /* Libraries */,
 				AF872E321614BFFA00078E58 /* Supporting Files */,
 			);
@@ -459,6 +539,24 @@
 				AF872EE11614C32E00078E58 /* SVProgressHUD.bundle in Resources */,
 				AF2EE8DA1614C810004DADF3 /* LoginViewController_iPad.xib in Resources */,
 				AF2EE8DF1614C820004DADF3 /* LoginViewController_iPhone.xib in Resources */,
+				AF1CA233161530010015970A /* RootViewController_iPhone.xib in Resources */,
+				AF1CA2361615301D0015970A /* RootViewController_iPad.xib in Resources */,
+				AF1CA2691615EB840015970A /* applyButtonBackground.png in Resources */,
+				AF1CA26A1615EB840015970A /* Background.png in Resources */,
+				AF1CA26B1615EB840015970A /* Background@2x.png in Resources */,
+				AF1CA26C1615EB840015970A /* captainFreed.png in Resources */,
+				AF1CA26D1615EB840015970A /* freed.jpg in Resources */,
+				AF1CA26E1615EB840015970A /* kcasey.jpg in Resources */,
+				AF1CA26F1615EB840015970A /* freedSignature.png in Resources */,
+				AF1CA2701615EB840015970A /* log.png in Resources */,
+				AF1CA2711615EB840015970A /* loginButtonBackground.png in Resources */,
+				AF1CA2721615EB840015970A /* logo.png in Resources */,
+				AF1CA2731615EB840015970A /* logo@2x.png in Resources */,
+				AF1CA2741615EB840015970A /* powerButton.png in Resources */,
+				AF1CA2751615EB840015970A /* powerButton@2x.png in Resources */,
+				AF1CA2761615EB840015970A /* speechbubble.png in Resources */,
+				AF1CA27B1615F0AE0015970A /* HomeViewController_iPhone.xib in Resources */,
+				AF1CA27D1615F0BE0015970A /* HomeViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +606,8 @@
 				AF872EE01614C32E00078E58 /* Reachability.m in Sources */,
 				AF872EE21614C32E00078E58 /* SVProgressHUD.m in Sources */,
 				AF2EE8DE1614C820004DADF3 /* LoginViewController.m in Sources */,
+				AF1CA232161530010015970A /* RootViewController.m in Sources */,
+				AF1CA27A1615F0AE0015970A /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

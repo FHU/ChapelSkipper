@@ -7,6 +7,7 @@
 // test change
 
 #import "HomeViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface HomeViewController ()
 
@@ -28,6 +29,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
+
+-(void) viewDidAppear:(BOOL)animated
+{
+    // Play bell sound on did appear
+    [self playSound:@"two-bells" andExtension:@"mp3"];
+}
+
+
+/* http://stackoverflow.com/questions/10329291/play-a-short-sound-in-ios */
+-(void) playSound: (NSString*) fileName andExtension:(NSString*) extension
+{
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource: fileName ofType:extension];
+    SystemSoundID soundID;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    AudioServicesPlaySystemSound (soundID);
+}
+
 
 - (void)didReceiveMemoryWarning
 {

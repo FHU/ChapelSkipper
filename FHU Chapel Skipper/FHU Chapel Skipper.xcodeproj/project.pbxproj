@@ -82,6 +82,8 @@
 		AF872EEA1614C42D00078E58 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF872EE91614C42D00078E58 /* SystemConfiguration.framework */; };
 		AF872EEC1614C43900078E58 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF872EEB1614C43900078E58 /* CFNetwork.framework */; };
 		AF872EEE1614C44300078E58 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF872EED1614C44300078E58 /* MobileCoreServices.framework */; };
+		FD0B002B161602A4007320BE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0B002A161602A4007320BE /* AudioToolbox.framework */; };
+		FD0B003716160353007320BE /* two-bells.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FD0B003616160353007320BE /* two-bells.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -209,6 +211,8 @@
 		AF872EE91614C42D00078E58 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AF872EEB1614C43900078E58 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		AF872EED1614C44300078E58 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		FD0B002A161602A4007320BE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FD0B003616160353007320BE /* two-bells.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "two-bells.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD0B002B161602A4007320BE /* AudioToolbox.framework in Frameworks */,
 				AF872EEE1614C44300078E58 /* MobileCoreServices.framework in Frameworks */,
 				AF872EEC1614C43900078E58 /* CFNetwork.framework in Frameworks */,
 				AF872EEA1614C42D00078E58 /* SystemConfiguration.framework in Frameworks */,
@@ -280,6 +285,7 @@
 		AF872E2A1614BFFA00078E58 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FD0B002A161602A4007320BE /* AudioToolbox.framework */,
 				AF872EED1614C44300078E58 /* MobileCoreServices.framework */,
 				AF872EEB1614C43900078E58 /* CFNetwork.framework */,
 				AF872EE91614C42D00078E58 /* SystemConfiguration.framework */,
@@ -296,6 +302,7 @@
 		AF872E311614BFFA00078E58 /* FHU Chapel Skipper */ = {
 			isa = PBXGroup;
 			children = (
+				FD0B003516160353007320BE /* Sounds */,
 				AF1CA2591615EB840015970A /* Images */,
 				AF872E3A1614BFFA00078E58 /* AppDelegate.h */,
 				AF872E3B1614BFFA00078E58 /* AppDelegate.m */,
@@ -481,6 +488,14 @@
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
+		FD0B003516160353007320BE /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				FD0B003616160353007320BE /* two-bells.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -557,6 +572,7 @@
 				AF1CA2761615EB840015970A /* speechbubble.png in Resources */,
 				AF1CA27B1615F0AE0015970A /* HomeViewController_iPhone.xib in Resources */,
 				AF1CA27D1615F0BE0015970A /* HomeViewController_iPad.xib in Resources */,
+				FD0B003716160353007320BE /* two-bells.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

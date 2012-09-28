@@ -30,19 +30,27 @@
     // Do any additional setup after loading the view from its nib.
 }
 
--(void) viewDidAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
-    // Play bell sound on did appear
+    //Consider looping a single bell sound for each absence.
+    /*
+    int absences = [self.absencesLabel.text intValue];
+    
+    for (int count = 0; count < absences; count++) {
+        [self playSound:@"oneBell" andExtension:@"mp3"];
+    }
+    */
+    
+    //Play bell sound
     [self playSound:@"two-bells" andExtension:@"mp3"];
 }
 
 
 /* http://stackoverflow.com/questions/10329291/play-a-short-sound-in-ios */
--(void) playSound: (NSString*) fileName andExtension:(NSString*) extension
-{
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource: fileName ofType:extension];
+- (void)playSound: (NSString*) fileName andExtension:(NSString*) extension {
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:fileName ofType:extension];
     SystemSoundID soundID;
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:soundPath], &soundID);
     AudioServicesPlaySystemSound (soundID);
 }
 

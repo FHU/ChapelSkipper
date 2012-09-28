@@ -58,8 +58,6 @@
 }
 
 - (IBAction)login:(id)sender {
-    NSLog(@"Login");
-    
     [self.view endEditing:YES];
     
     [SVProgressHUD show];
@@ -106,6 +104,11 @@
 }
 
 - (void)keyboardWillBeShown:(NSNotification *)notification {
+    //If iPad, return; no need to make room for the keyboard
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        return;
+    }
+    
     //Begin animation
     [UIView beginAnimations:nil context:NULL];
     
@@ -126,6 +129,11 @@
 }
 
 - (void)keyboardWillBeHidden:(NSNotification *)notification {
+    //If iPad, return; no need to make room for the keyboard
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        return;
+    }
+    
     //Begin animation
     [UIView beginAnimations:nil context:NULL];
     

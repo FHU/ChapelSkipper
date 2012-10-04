@@ -30,6 +30,7 @@
 		AF2EE8DA1614C810004DADF3 /* LoginViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2EE8D91614C810004DADF3 /* LoginViewController_iPad.xib */; };
 		AF2EE8DE1614C820004DADF3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2EE8DC1614C820004DADF3 /* LoginViewController.m */; };
 		AF2EE8DF1614C820004DADF3 /* LoginViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2EE8DD1614C820004DADF3 /* LoginViewController_iPhone.xib */; };
+		AF745B51161E0FEF00E43243 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = AF745B50161E0FEF00E43243 /* line.png */; };
 		AF872E2C1614BFFA00078E58 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF872E2B1614BFFA00078E58 /* UIKit.framework */; };
 		AF872E2E1614BFFA00078E58 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF872E2D1614BFFA00078E58 /* Foundation.framework */; };
 		AF872E301614BFFA00078E58 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF872E2F1614BFFA00078E58 /* CoreGraphics.framework */; };
@@ -113,6 +114,7 @@
 		AF2EE8DB1614C820004DADF3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		AF2EE8DC1614C820004DADF3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		AF2EE8DD1614C820004DADF3 /* LoginViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController_iPhone.xib; sourceTree = "<group>"; };
+		AF745B50161E0FEF00E43243 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		AF872E271614BFFA00078E58 /* FHU Chapel Skipper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FHU Chapel Skipper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF872E2B1614BFFA00078E58 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AF872E2D1614BFFA00078E58 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -239,6 +241,7 @@
 		AF1CA2591615EB840015970A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AF745B50161E0FEF00E43243 /* line.png */,
 				AF1CA25A1615EB840015970A /* applyButtonBackground.png */,
 				AF1CA25B1615EB840015970A /* Background.png */,
 				AF1CA25C1615EB840015970A /* Background@2x.png */,
@@ -573,6 +576,7 @@
 				AF1CA27B1615F0AE0015970A /* HomeViewController_iPhone.xib in Resources */,
 				AF1CA27D1615F0BE0015970A /* HomeViewController_iPad.xib in Resources */,
 				FD0B003716160353007320BE /* two-bells.mp3 in Resources */,
+				AF745B51161E0FEF00E43243 /* line.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

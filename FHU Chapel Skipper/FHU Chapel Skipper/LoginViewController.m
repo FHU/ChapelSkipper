@@ -199,11 +199,11 @@
 #pragma mark - UITextFieldDelegate
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    NSLog(@"Begin editing");
+//    NSLog(@"Begin editing");
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    NSLog(@"End editing");
+//    NSLog(@"End editing");
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

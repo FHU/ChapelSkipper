@@ -10,4 +10,10 @@
 
 @interface HomeViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIView *quoteView;
+@property BOOL quoteViewIsShown;
+
+- (IBAction)tappedQuoteView:(id)sender;
+
 @end

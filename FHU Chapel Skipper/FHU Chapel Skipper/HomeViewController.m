@@ -14,6 +14,9 @@
 @end
 
 @implementation HomeViewController
+@synthesize tableView = _tableView;
+@synthesize quoteView = _quoteView;
+@synthesize quoteViewIsShown = _quoteViewIsShown;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +31,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    _quoteViewIsShown = NO;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -37,14 +47,21 @@
     int absences = [self.absencesLabel.text intValue];
     
     for (int count = 0; count < absences; count++) {
+        //Play the sound
         [self playSound:@"oneBell" andExtension:@"mp3"];
+        
+        //Count the number along the way?
+        //animate number change
     }
     */
     
     //Play bell sound
     [self playSound:@"two-bells" andExtension:@"mp3"];
+    
+    [self performSelector:@selector(toggleQuoteView) withObject:nil afterDelay:0.3];
 }
 
+#pragma mark - Custom methods
 
 /* http://stackoverflow.com/questions/10329291/play-a-short-sound-in-ios */
 - (void)playSound: (NSString*) fileName andExtension:(NSString*) extension {
@@ -54,11 +71,56 @@
     AudioServicesPlaySystemSound (soundID);
 }
 
+- (IBAction)tappedQuoteView:(id)sender {
+    [self toggleQuoteView];
+}
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)toggleQuoteView {
+    //Begin animation
+    [UIView beginAnimations:nil context:NULL];
+    
+    if (_quoteViewIsShown) {
+        [_quoteView setFrame:CGRectMake(_quoteView.frame.origin.x,
+                                        _quoteView.frame.origin.y + 120,
+                                        _quoteView.frame.size.width,
+                                        _quoteView.frame.size.width)];
+        _quoteViewIsShown = FALSE;
+    }
+    else {
+        [_quoteView setFrame:CGRectMake(_quoteView.frame.origin.x,
+                                        _quoteView.frame.origin.y - 120,
+                                        _quoteView.frame.size.width,
+                                        _quoteView.frame.size.width)];
+        _quoteViewIsShown = TRUE;
+    }
+    
+    //Commit animation
+    [UIView setAnimationDuration:0.3];
+    [UIView commitAnimations];
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"Presentation %i", indexPath.row + 1];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Speaker %i", indexPath.row + 1];
+    
+    return cell;
 }
 
 @end

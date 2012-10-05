@@ -8,14 +8,19 @@
 
 #import "HomeViewController.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface HomeViewController ()
 
 @end
 
 @implementation HomeViewController
+@synthesize absencesLabel = _absencesLabel;
 @synthesize tableView = _tableView;
 @synthesize quoteView = _quoteView;
+@synthesize quoteTextView = _quoteTextView;
+@synthesize facebookButton = _facebookButton;
+@synthesize tweetButton = _tweetButton;
 @synthesize quoteViewIsShown = _quoteViewIsShown;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -32,7 +37,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    //
+    
     _quoteViewIsShown = NO;
+    
+    //Border for iPad table
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        _tableView.layer.borderWidth = 1.0;
+        _tableView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

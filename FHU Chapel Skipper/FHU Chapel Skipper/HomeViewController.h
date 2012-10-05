@@ -19,5 +19,7 @@
 @property BOOL quoteViewIsShown;
 
 - (IBAction)tappedQuoteView:(id)sender;
+- (IBAction)sendTweet:(id)sender;
+- (IBAction)shareFacebook:(id)sender;
 
 @end

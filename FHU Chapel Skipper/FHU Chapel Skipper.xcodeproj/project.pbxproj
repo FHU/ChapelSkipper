@@ -30,7 +30,12 @@
 		AF2EE8DA1614C810004DADF3 /* LoginViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2EE8D91614C810004DADF3 /* LoginViewController_iPad.xib */; };
 		AF2EE8DE1614C820004DADF3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2EE8DC1614C820004DADF3 /* LoginViewController.m */; };
 		AF2EE8DF1614C820004DADF3 /* LoginViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2EE8DD1614C820004DADF3 /* LoginViewController_iPhone.xib */; };
+		AF67B709161F4C6C003A189E /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF67B708161F4C6C003A189E /* Twitter.framework */; };
+		AF67B70B161F4C8F003A189E /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF67B70A161F4C8F003A189E /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		AF67B70D161F4C9C003A189E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF67B70C161F4C9C003A189E /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		AF67B70F161F4CA1003A189E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF67B70E161F4CA1003A189E /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		AF745B51161E0FEF00E43243 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = AF745B50161E0FEF00E43243 /* line.png */; };
+		AF7947C0161F5C59000FBD40 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF67B706161F4C49003A189E /* FacebookSDK.framework */; };
 		AF872E2C1614BFFA00078E58 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF872E2B1614BFFA00078E58 /* UIKit.framework */; };
 		AF872E2E1614BFFA00078E58 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF872E2D1614BFFA00078E58 /* Foundation.framework */; };
 		AF872E301614BFFA00078E58 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF872E2F1614BFFA00078E58 /* CoreGraphics.framework */; };
@@ -83,6 +88,10 @@
 		AF872EEA1614C42D00078E58 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF872EE91614C42D00078E58 /* SystemConfiguration.framework */; };
 		AF872EEC1614C43900078E58 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF872EEB1614C43900078E58 /* CFNetwork.framework */; };
 		AF872EEE1614C44300078E58 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF872EED1614C44300078E58 /* MobileCoreServices.framework */; };
+		AFA2459C161F3E450021C539 /* tweetButton.png in Resources */ = {isa = PBXBuildFile; fileRef = AFA2459A161F3E450021C539 /* tweetButton.png */; };
+		AFA2459D161F3E450021C539 /* tweetButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFA2459B161F3E450021C539 /* tweetButton@2x.png */; };
+		AFA245A1161F41820021C539 /* facebookButton.png in Resources */ = {isa = PBXBuildFile; fileRef = AFA2459F161F41820021C539 /* facebookButton.png */; };
+		AFA245A2161F41820021C539 /* facebookButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFA245A0161F41820021C539 /* facebookButton@2x.png */; };
 		FD0B002B161602A4007320BE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0B002A161602A4007320BE /* AudioToolbox.framework */; };
 		FD0B003716160353007320BE /* two-bells.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FD0B003616160353007320BE /* two-bells.mp3 */; };
 /* End PBXBuildFile section */
@@ -114,6 +123,11 @@
 		AF2EE8DB1614C820004DADF3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		AF2EE8DC1614C820004DADF3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		AF2EE8DD1614C820004DADF3 /* LoginViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController_iPhone.xib; sourceTree = "<group>"; };
+		AF67B706161F4C49003A189E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		AF67B708161F4C6C003A189E /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		AF67B70A161F4C8F003A189E /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		AF67B70C161F4C9C003A189E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		AF67B70E161F4CA1003A189E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		AF745B50161E0FEF00E43243 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		AF872E271614BFFA00078E58 /* FHU Chapel Skipper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FHU Chapel Skipper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF872E2B1614BFFA00078E58 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -213,6 +227,10 @@
 		AF872EE91614C42D00078E58 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AF872EEB1614C43900078E58 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		AF872EED1614C44300078E58 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		AFA2459A161F3E450021C539 /* tweetButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tweetButton.png; sourceTree = "<group>"; };
+		AFA2459B161F3E450021C539 /* tweetButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tweetButton@2x.png"; sourceTree = "<group>"; };
+		AFA2459F161F41820021C539 /* facebookButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookButton.png; sourceTree = "<group>"; };
+		AFA245A0161F41820021C539 /* facebookButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebookButton@2x.png"; sourceTree = "<group>"; };
 		FD0B002A161602A4007320BE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FD0B003616160353007320BE /* two-bells.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "two-bells.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,6 +240,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF67B70F161F4CA1003A189E /* Social.framework in Frameworks */,
+				AF67B70D161F4C9C003A189E /* Accounts.framework in Frameworks */,
+				AF67B70B161F4C8F003A189E /* AdSupport.framework in Frameworks */,
+				AF67B709161F4C6C003A189E /* Twitter.framework in Frameworks */,
+				AF7947C0161F5C59000FBD40 /* FacebookSDK.framework in Frameworks */,
 				FD0B002B161602A4007320BE /* AudioToolbox.framework in Frameworks */,
 				AF872EEE1614C44300078E58 /* MobileCoreServices.framework in Frameworks */,
 				AF872EEC1614C43900078E58 /* CFNetwork.framework in Frameworks */,
@@ -241,6 +264,10 @@
 		AF1CA2591615EB840015970A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AFA2459F161F41820021C539 /* facebookButton.png */,
+				AFA245A0161F41820021C539 /* facebookButton@2x.png */,
+				AFA2459A161F3E450021C539 /* tweetButton.png */,
+				AFA2459B161F3E450021C539 /* tweetButton@2x.png */,
 				AF745B50161E0FEF00E43243 /* line.png */,
 				AF1CA25A1615EB840015970A /* applyButtonBackground.png */,
 				AF1CA25B1615EB840015970A /* Background.png */,
@@ -288,6 +315,11 @@
 		AF872E2A1614BFFA00078E58 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF67B70E161F4CA1003A189E /* Social.framework */,
+				AF67B70C161F4C9C003A189E /* Accounts.framework */,
+				AF67B70A161F4C8F003A189E /* AdSupport.framework */,
+				AF67B708161F4C6C003A189E /* Twitter.framework */,
+				AF67B706161F4C49003A189E /* FacebookSDK.framework */,
 				FD0B002A161602A4007320BE /* AudioToolbox.framework */,
 				AF872EED1614C44300078E58 /* MobileCoreServices.framework */,
 				AF872EEB1614C43900078E58 /* CFNetwork.framework */,
@@ -577,6 +609,10 @@
 				AF1CA27D1615F0BE0015970A /* HomeViewController_iPad.xib in Resources */,
 				FD0B003716160353007320BE /* two-bells.mp3 in Resources */,
 				AF745B51161E0FEF00E43243 /* line.png in Resources */,
+				AFA2459C161F3E450021C539 /* tweetButton.png in Resources */,
+				AFA2459D161F3E450021C539 /* tweetButton@2x.png in Resources */,
+				AFA245A1161F41820021C539 /* facebookButton.png in Resources */,
+				AFA245A2161F41820021C539 /* facebookButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,10 +735,15 @@
 		AF872E4F1614BFFB00078E58 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FHU Chapel Skipper/FHU Chapel Skipper-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "FHU Chapel Skipper/FHU Chapel Skipper-Info.plist";
+				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -711,10 +752,15 @@
 		AF872E501614BFFB00078E58 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FHU Chapel Skipper/FHU Chapel Skipper-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "FHU Chapel Skipper/FHU Chapel Skipper-Info.plist";
+				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -112,6 +112,14 @@
     [UIView commitAnimations];
 }
 
+- (IBAction)sendTweet:(id)sender {
+    
+}
+
+- (IBAction)shareFacebook:(id)sender {
+    
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

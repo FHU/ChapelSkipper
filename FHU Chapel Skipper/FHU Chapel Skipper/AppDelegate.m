@@ -20,8 +20,10 @@
     } else {
         self.viewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController_iPad" bundle:nil];
     }
+    
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

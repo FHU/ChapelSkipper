@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import <QuartzCore/QuartzCore.h>
+#import "ChapelQuotes.h"
 
 @interface HomeViewController ()
 
@@ -37,8 +38,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    //
-    
     _quoteViewIsShown = NO;
     
     //Border for iPad table
@@ -51,6 +50,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    //Generate a random chapel quote
+    ChapelQuotes *chapelQuotes = [[ChapelQuotes alloc] init];
+    
+    _quoteTextView.text = [chapelQuotes generateRandomQuote];
 }
 
 - (void)viewDidAppear:(BOOL)animated

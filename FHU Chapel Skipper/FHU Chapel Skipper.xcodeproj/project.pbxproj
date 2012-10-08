@@ -36,6 +36,7 @@
 		AF67B70F161F4CA1003A189E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF67B70E161F4CA1003A189E /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		AF745B51161E0FEF00E43243 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = AF745B50161E0FEF00E43243 /* line.png */; };
 		AF7947C0161F5C59000FBD40 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF67B706161F4C49003A189E /* FacebookSDK.framework */; };
+		AF813F821621071600305FD5 /* ChapelQuotes.m in Sources */ = {isa = PBXBuildFile; fileRef = AF813F811621071600305FD5 /* ChapelQuotes.m */; };
 		AF872E2C1614BFFA00078E58 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF872E2B1614BFFA00078E58 /* UIKit.framework */; };
 		AF872E2E1614BFFA00078E58 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF872E2D1614BFFA00078E58 /* Foundation.framework */; };
 		AF872E301614BFFA00078E58 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF872E2F1614BFFA00078E58 /* CoreGraphics.framework */; };
@@ -129,6 +130,8 @@
 		AF67B70C161F4C9C003A189E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		AF67B70E161F4CA1003A189E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		AF745B50161E0FEF00E43243 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
+		AF813F801621071600305FD5 /* ChapelQuotes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapelQuotes.h; sourceTree = "<group>"; };
+		AF813F811621071600305FD5 /* ChapelQuotes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapelQuotes.m; sourceTree = "<group>"; };
 		AF872E271614BFFA00078E58 /* FHU Chapel Skipper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FHU Chapel Skipper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF872E2B1614BFFA00078E58 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AF872E2D1614BFFA00078E58 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -353,6 +356,8 @@
 				AF1CA2781615F0AE0015970A /* HomeViewController.m */,
 				AF1CA2791615F0AE0015970A /* HomeViewController_iPhone.xib */,
 				AF1CA27C1615F0BE0015970A /* HomeViewController_iPad.xib */,
+				AF813F801621071600305FD5 /* ChapelQuotes.h */,
+				AF813F811621071600305FD5 /* ChapelQuotes.m */,
 				AF872E661614C32E00078E58 /* Libraries */,
 				AF872E321614BFFA00078E58 /* Supporting Files */,
 			);
@@ -664,6 +669,7 @@
 				AF2EE8DE1614C820004DADF3 /* LoginViewController.m in Sources */,
 				AF1CA232161530010015970A /* RootViewController.m in Sources */,
 				AF1CA27A1615F0AE0015970A /* HomeViewController.m in Sources */,
+				AF813F821621071600305FD5 /* ChapelQuotes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

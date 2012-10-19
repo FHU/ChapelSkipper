@@ -56,4 +56,7 @@
     [self presentViewController:login animated:NO completion:nil];
 }
 
+- (IBAction)openSettings:(id)sender {
+}
+
 @end

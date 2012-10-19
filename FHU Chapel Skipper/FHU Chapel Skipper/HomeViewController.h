@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ChapelQuotes.h"
 
 @interface HomeViewController : UIViewController
 
+@property (strong, nonatomic) ChapelQuotes *chapelQuotes;
 @property (strong, nonatomic) IBOutlet UILabel *absencesLabel;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIView *quoteView;
@@ -21,5 +23,6 @@
 - (IBAction)tappedQuoteView:(id)sender;
 - (IBAction)sendTweet:(id)sender;
 - (IBAction)shareFacebook:(id)sender;
+- (IBAction)refreshQuote:(id)sender;
 
 @end

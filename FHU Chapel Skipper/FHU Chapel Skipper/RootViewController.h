@@ -13,5 +13,6 @@
 @property (strong, nonatomic) IBOutlet UINavigationController *navigationController;
 
 - (IBAction)logout:(id)sender;
+- (IBAction)openSettings:(id)sender;
 
 @end

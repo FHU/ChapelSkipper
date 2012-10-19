@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF1275B716307FDB000C25C9 /* shipdeck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF1275B616307FDB000C25C9 /* shipdeck.jpg */; };
 		AF1CA232161530010015970A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1CA230161530010015970A /* RootViewController.m */; };
 		AF1CA233161530010015970A /* RootViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF1CA231161530010015970A /* RootViewController_iPhone.xib */; };
 		AF1CA2361615301D0015970A /* RootViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF1CA2351615301D0015970A /* RootViewController_iPad.xib */; };
@@ -35,6 +36,7 @@
 		AF67B70D161F4C9C003A189E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF67B70C161F4C9C003A189E /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		AF67B70F161F4CA1003A189E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF67B70E161F4CA1003A189E /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		AF745B51161E0FEF00E43243 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = AF745B50161E0FEF00E43243 /* line.png */; };
+		AF74D1971630820C001DB7F7 /* refresh-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AF74D1961630820C001DB7F7 /* refresh-icon.png */; };
 		AF7947C0161F5C59000FBD40 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF67B706161F4C49003A189E /* FacebookSDK.framework */; };
 		AF813F821621071600305FD5 /* ChapelQuotes.m in Sources */ = {isa = PBXBuildFile; fileRef = AF813F811621071600305FD5 /* ChapelQuotes.m */; };
 		AF872E2C1614BFFA00078E58 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF872E2B1614BFFA00078E58 /* UIKit.framework */; };
@@ -98,6 +100,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF1275B616307FDB000C25C9 /* shipdeck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shipdeck.jpg; sourceTree = "<group>"; };
 		AF1CA22F161530010015970A /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		AF1CA230161530010015970A /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		AF1CA231161530010015970A /* RootViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController_iPhone.xib; sourceTree = "<group>"; };
@@ -130,6 +133,7 @@
 		AF67B70C161F4C9C003A189E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		AF67B70E161F4CA1003A189E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		AF745B50161E0FEF00E43243 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
+		AF74D1961630820C001DB7F7 /* refresh-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh-icon.png"; sourceTree = "<group>"; };
 		AF813F801621071600305FD5 /* ChapelQuotes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapelQuotes.h; sourceTree = "<group>"; };
 		AF813F811621071600305FD5 /* ChapelQuotes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapelQuotes.m; sourceTree = "<group>"; };
 		AF872E271614BFFA00078E58 /* FHU Chapel Skipper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FHU Chapel Skipper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -267,6 +271,8 @@
 		AF1CA2591615EB840015970A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AF74D1961630820C001DB7F7 /* refresh-icon.png */,
+				AF1275B616307FDB000C25C9 /* shipdeck.jpg */,
 				AFA2459F161F41820021C539 /* facebookButton.png */,
 				AFA245A0161F41820021C539 /* facebookButton@2x.png */,
 				AFA2459A161F3E450021C539 /* tweetButton.png */,
@@ -618,6 +624,8 @@
 				AFA2459D161F3E450021C539 /* tweetButton@2x.png in Resources */,
 				AFA245A1161F41820021C539 /* facebookButton.png in Resources */,
 				AFA245A2161F41820021C539 /* facebookButton@2x.png in Resources */,
+				AF1275B716307FDB000C25C9 /* shipdeck.jpg in Resources */,
+				AF74D1971630820C001DB7F7 /* refresh-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

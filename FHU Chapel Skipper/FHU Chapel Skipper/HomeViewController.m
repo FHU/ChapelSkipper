@@ -10,6 +10,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import <QuartzCore/QuartzCore.h>
 #import "ChapelQuotes.h"
+#import <Social/Social.h>
 
 @interface HomeViewController ()
 
@@ -24,6 +25,7 @@
 @synthesize facebookButton = _facebookButton;
 @synthesize tweetButton = _tweetButton;
 @synthesize quoteViewIsShown = _quoteViewIsShown;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -121,11 +123,50 @@
 }
 
 - (IBAction)sendTweet:(id)sender {
-    
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        SLComposeViewController *tweetSheet = [SLComposeViewController
+                                               composeViewControllerForServiceType:SLServiceTypeTwitter];
+        
+        NSString *tweetString = [NSString stringWithFormat:@"I have %@ chapel absences. #chapelSkipper", self.absencesLabel.text];
+        
+        [tweetSheet setInitialText: tweetString];
+        [self presentViewController:tweetSheet animated:YES completion:nil];
+    }
+    else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Sorry"
+                                  message:@"You can't send a tweet right now, make sure your device has an internet connection and you have at least one Twitter account setup."
+                                  delegate:self
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+        [alertView show];
+    }
 }
 
 - (IBAction)shareFacebook:(id)sender {
     
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+    {
+        SLComposeViewController *fbSheet = [SLComposeViewController
+                                               composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        NSString *fbString = [NSString stringWithFormat:@"I have %@ chapel absences.", self.absencesLabel.text];
+        
+        [fbSheet setInitialText: fbString];
+        [self presentViewController:fbSheet animated:YES completion:nil];
+    }
+    else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Sorry"
+                                  message:@"You can't share on Facebook, make sure your device has an internet connection and you have a Facebook account setup."
+                                  delegate:self
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+        [alertView show];
+    }
 }
 
 - (IBAction)refreshQuote:(id)sender {

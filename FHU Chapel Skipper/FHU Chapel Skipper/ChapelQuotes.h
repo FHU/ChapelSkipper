@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Quote.h"
 
 @interface ChapelQuotes : NSObject
 
 @property (strong, nonatomic) NSMutableArray *quotes;
+@property (strong, nonatomic) NSMutableArray *celebrityQuotes;
+@property BOOL celebrityEnabled;
 
 - (NSString *)generateRandomQuote;
 

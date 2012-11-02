@@ -87,7 +87,7 @@
 #pragma mark - Custom methods
 
 /* http://stackoverflow.com/questions/10329291/play-a-short-sound-in-ios */
-- (void)playSound: (NSString*) fileName andExtension:(NSString*) extension {
+- (void)playSound:(NSString *)fileName andExtension:(NSString *)extension {
     NSString *soundPath = [[NSBundle mainBundle] pathForResource:fileName ofType:extension];
     SystemSoundID soundID;
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:soundPath], &soundID);
@@ -123,48 +123,43 @@
 }
 
 - (IBAction)sendTweet:(id)sender {
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
-    {
-        SLComposeViewController *tweetSheet = [SLComposeViewController
-                                               composeViewControllerForServiceType:SLServiceTypeTwitter];
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+        SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         
-        NSString *tweetString = [NSString stringWithFormat:@"I have %@ chapel absences. #chapelSkipper", self.absencesLabel.text];
+        int absences = _absencesLabel.text.intValue;
         
-        [tweetSheet setInitialText: tweetString];
+        NSString *tweetString = [NSString stringWithFormat:@"I have %i chapel absences. #chapelskipper", absences];
+        
+        [tweetSheet setInitialText:tweetString];
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }
-    else
-    {
-        UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:@"Sorry"
-                                  message:@"You can't send a tweet right now, make sure your device has an internet connection and you have at least one Twitter account setup."
-                                  delegate:self
-                                  cancelButtonTitle:@"OK"
-                                  otherButtonTitles:nil];
+    else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry"
+                                                            message:@"You can't send a tweet right now. Make sure your device has an internet connection and you have at least one Twitter account set up."
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
         [alertView show];
     }
 }
 
 - (IBAction)shareFacebook:(id)sender {
-    
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
-    {
-        SLComposeViewController *fbSheet = [SLComposeViewController
-                                               composeViewControllerForServiceType:SLServiceTypeFacebook];
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        SLComposeViewController *fbSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         
-        NSString *fbString = [NSString stringWithFormat:@"I have %@ chapel absences.", self.absencesLabel.text];
+        int absences = _absencesLabel.text.intValue;
         
-        [fbSheet setInitialText: fbString];
+        NSString *fbString = [NSString stringWithFormat:@"I have %i chapel absences.", absences];
+        
+        [fbSheet setInitialText:fbString];
         [self presentViewController:fbSheet animated:YES completion:nil];
     }
-    else
-    {
-        UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:@"Sorry"
-                                  message:@"You can't share on Facebook, make sure your device has an internet connection and you have a Facebook account setup."
-                                  delegate:self
-                                  cancelButtonTitle:@"OK"
-                                  otherButtonTitles:nil];
+    else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry"
+                                                            message:@"You can't share on Facebook. Make sure your device has an internet connection and you have a Facebook account set up."
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
         [alertView show];
     }
 }

@@ -108,6 +108,8 @@
                                         _quoteView.frame.size.width,
                                         _quoteView.frame.size.width)];
         _quoteViewIsShown = FALSE;
+        
+        self.arrowImageView.image = [UIImage imageNamed:@"circle_arrow_up"];
     }
     else {
         [_quoteView setFrame:CGRectMake(_quoteView.frame.origin.x,
@@ -115,7 +117,10 @@
                                         _quoteView.frame.size.width,
                                         _quoteView.frame.size.width)];
         _quoteViewIsShown = TRUE;
+        
+        self.arrowImageView.image = [UIImage imageNamed:@"circle_arrow_down"];
     }
+    
     
     //Commit animation
     [UIView setAnimationDuration:0.3];

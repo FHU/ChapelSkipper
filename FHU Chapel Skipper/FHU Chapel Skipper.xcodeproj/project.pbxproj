@@ -95,6 +95,8 @@
 		AFE466E616378D7000637EB2 /* Quote.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE466E516378D7000637EB2 /* Quote.m */; };
 		FD0B002B161602A4007320BE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0B002A161602A4007320BE /* AudioToolbox.framework */; };
 		FD0B003716160353007320BE /* two-bells.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FD0B003616160353007320BE /* two-bells.mp3 */; };
+		FD27EA59164C6832007BBF35 /* circle_arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = FD27EA57164C6832007BBF35 /* circle_arrow_up.png */; };
+		FD27EA5A164C6832007BBF35 /* circle_arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = FD27EA58164C6832007BBF35 /* circle_arrow_down.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -237,6 +239,8 @@
 		AFE466E516378D7000637EB2 /* Quote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quote.m; sourceTree = "<group>"; };
 		FD0B002A161602A4007320BE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FD0B003616160353007320BE /* two-bells.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "two-bells.mp3"; sourceTree = "<group>"; };
+		FD27EA57164C6832007BBF35 /* circle_arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle_arrow_up.png; sourceTree = "<group>"; };
+		FD27EA58164C6832007BBF35 /* circle_arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle_arrow_down.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +268,8 @@
 		AF1CA2591615EB840015970A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FD27EA57164C6832007BBF35 /* circle_arrow_up.png */,
+				FD27EA58164C6832007BBF35 /* circle_arrow_down.png */,
 				AF516B8C16444001007160E9 /* refresh.png */,
 				AF516B8D16444001007160E9 /* refresh@2x.png */,
 				AF1275B616307FDB000C25C9 /* shipdeck.jpg */,
@@ -619,6 +625,8 @@
 				AF1275B716307FDB000C25C9 /* shipdeck.jpg in Resources */,
 				AF516B8E16444001007160E9 /* refresh.png in Resources */,
 				AF516B8F16444001007160E9 /* refresh@2x.png in Resources */,
+				FD27EA59164C6832007BBF35 /* circle_arrow_up.png in Resources */,
+				FD27EA5A164C6832007BBF35 /* circle_arrow_down.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

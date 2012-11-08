@@ -183,6 +183,11 @@
     return 10;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return @"Chapel Schedule";
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -190,7 +195,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    
+        
     switch (indexPath.row) {
         case 0:
             cell.textLabel.text = @"Maroon and Gold Day";
@@ -235,6 +240,7 @@
         default:
             break;
     }
+    
     
     return cell;
 }

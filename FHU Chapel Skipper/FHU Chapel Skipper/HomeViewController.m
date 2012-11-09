@@ -21,11 +21,11 @@
 @synthesize absencesLabel = _absencesLabel;
 @synthesize tableView = _tableView;
 @synthesize quoteView = _quoteView;
+@synthesize paperclip = _paperclip;
 @synthesize quoteTextView = _quoteTextView;
 @synthesize facebookButton = _facebookButton;
 @synthesize tweetButton = _tweetButton;
 @synthesize quoteViewIsShown = _quoteViewIsShown;
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -107,6 +107,10 @@
                                         _quoteView.frame.origin.y + 130,
                                         _quoteView.frame.size.width,
                                         _quoteView.frame.size.width)];
+        [_paperclip setFrame:CGRectMake(_paperclip.frame.origin.x,
+                                        _paperclip.frame.origin.y + 130,
+                                        _paperclip.frame.size.width,
+                                        _paperclip.frame.size.height)];
         _quoteViewIsShown = FALSE;
         
         self.arrowImageView.image = [UIImage imageNamed:@"circle_arrow_up"];
@@ -116,6 +120,10 @@
                                         _quoteView.frame.origin.y - 130,
                                         _quoteView.frame.size.width,
                                         _quoteView.frame.size.width)];
+        [_paperclip setFrame:CGRectMake(_paperclip.frame.origin.x,
+                                        _paperclip.frame.origin.y - 130,
+                                        _paperclip.frame.size.width,
+                                        _paperclip.frame.size.height)];
         _quoteViewIsShown = TRUE;
         
         self.arrowImageView.image = [UIImage imageNamed:@"circle_arrow_down"];
@@ -173,7 +181,7 @@
     _quoteTextView.text = [_chapelQuotes generateRandomQuote];
 }
 
-#pragma mark - Table view data source
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -186,6 +194,10 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     return @"Chapel Schedule";
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    cell.backgroundColor = [UIColor whiteColor];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -241,8 +253,11 @@
             break;
     }
     
-    
     return cell;
 }
+
+#pragma mark - UITableViewDelegate
+
+
 
 @end

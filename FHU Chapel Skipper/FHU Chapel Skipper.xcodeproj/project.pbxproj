@@ -105,6 +105,10 @@
 		FD0B003716160353007320BE /* two-bells.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FD0B003616160353007320BE /* two-bells.mp3 */; };
 		FD27EA59164C6832007BBF35 /* circle_arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = FD27EA57164C6832007BBF35 /* circle_arrow_up.png */; };
 		FD27EA5A164C6832007BBF35 /* circle_arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = FD27EA58164C6832007BBF35 /* circle_arrow_down.png */; };
+		FDAEC529164D5DF40028A679 /* circle_arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = FDAEC528164D5DF40028A679 /* circle_arrow_right.png */; };
+		FDAEC52C164D5EF00028A679 /* doubleArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FDAEC52B164D5EF00028A679 /* doubleArrow.png */; };
+		FDAEC52E164D5F230028A679 /* doubleArrowBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = FDAEC52D164D5F230028A679 /* doubleArrowBlack.png */; };
+		FDAEC530164D602F0028A679 /* doubleArrowRight.png in Resources */ = {isa = PBXBuildFile; fileRef = FDAEC52F164D602F0028A679 /* doubleArrowRight.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -257,6 +261,10 @@
 		FD0B003616160353007320BE /* two-bells.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "two-bells.mp3"; sourceTree = "<group>"; };
 		FD27EA57164C6832007BBF35 /* circle_arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle_arrow_up.png; sourceTree = "<group>"; };
 		FD27EA58164C6832007BBF35 /* circle_arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle_arrow_down.png; sourceTree = "<group>"; };
+		FDAEC528164D5DF40028A679 /* circle_arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle_arrow_right.png; sourceTree = "<group>"; };
+		FDAEC52B164D5EF00028A679 /* doubleArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = doubleArrow.png; path = ../../../../../Downloads/doubleArrow.png; sourceTree = "<group>"; };
+		FDAEC52D164D5F230028A679 /* doubleArrowBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = doubleArrowBlack.png; path = ../../../../../Downloads/doubleArrowBlack.png; sourceTree = "<group>"; };
+		FDAEC52F164D602F0028A679 /* doubleArrowRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doubleArrowRight.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +292,10 @@
 		AF1CA2591615EB840015970A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FDAEC528164D5DF40028A679 /* circle_arrow_right.png */,
+				FDAEC52B164D5EF00028A679 /* doubleArrow.png */,
+				FDAEC52D164D5F230028A679 /* doubleArrowBlack.png */,
+				FDAEC52F164D602F0028A679 /* doubleArrowRight.png */,
 				AFFBAAC8164C83A300079613 /* paperclip.png */,
 				AFFBAAC9164C83A300079613 /* paperclip@2x.png */,
 				AFFBAAC2164C806900079613 /* freed_portrait.png */,
@@ -659,6 +671,10 @@
 				AFFBAAC6164C806900079613 /* freed_portrait@2x.png in Resources */,
 				AFFBAACA164C83A300079613 /* paperclip.png in Resources */,
 				AFFBAACB164C83A300079613 /* paperclip@2x.png in Resources */,
+				FDAEC529164D5DF40028A679 /* circle_arrow_right.png in Resources */,
+				FDAEC52C164D5EF00028A679 /* doubleArrow.png in Resources */,
+				FDAEC52E164D5F230028A679 /* doubleArrowBlack.png in Resources */,
+				FDAEC530164D602F0028A679 /* doubleArrowRight.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

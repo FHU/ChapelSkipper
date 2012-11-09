@@ -11,6 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ChapelQuotes.h"
 #import <Social/Social.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface HomeViewController ()
 
@@ -187,7 +188,8 @@
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return 10;
 }
 
@@ -195,6 +197,62 @@
 {
     return @"Chapel Schedule";
 }
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    int sectionHeaderHeight = 30;
+    
+    // Create the view for the header
+    CGRect aFrame =CGRectMake(0, 0, tableView.contentSize.width, sectionHeaderHeight);
+    UIView * aView = [[UIView alloc] initWithFrame:aFrame];
+    aView.backgroundColor = UIColor.clearColor;
+    
+    // Create a stretchable image for the background that emulates the default gradient, only in green
+    UIImage *viewBackgroundImage = [[UIImage imageNamed:@"applyButtonBackground.png"] stretchableImageWithLeftCapWidth:12 topCapHeight:0];
+    
+    // Cannot set this image directly as the background of the cell because
+    // the background needs to be offset by 1pix at the top to cover the previous cell border (Alex Deplov's requirement ^_^)
+    CALayer *backgroungLayer = [CALayer layer];
+    
+    backgroungLayer.frame = CGRectMake(0, -1, tableView.contentSize.width, sectionHeaderHeight+1);
+    backgroungLayer.contents = (id) viewBackgroundImage.CGImage;
+    backgroungLayer.masksToBounds = NO;
+    backgroungLayer.opacity = 0.9;
+    [aView.layer addSublayer:backgroungLayer];
+    
+    // Take care of the section title now
+    UILabel *aTitle = [[UILabel alloc] initWithFrame: CGRectMake(10, 0, aView.bounds.size.width-10, aView.bounds.size.height)];
+    aTitle.text = @"Chapel Schedule"; //[self tableView:tableView titleForHeaderInSection:section];
+    aTitle.textAlignment = NSTextAlignmentLeft;
+    aTitle.backgroundColor = UIColor.clearColor;
+    aTitle.font = [UIFont boldSystemFontOfSize:20];
+    aTitle.textColor = UIColor.whiteColor;
+    
+    
+    //UIColor * color = [UIColor whiteColor];
+    UIColor * color = [UIColor blackColor];
+    
+    // Text shadow
+    aTitle.layer.shadowOffset = CGSizeMake(0, 1);
+    aTitle.layer.shadowRadius = .2;
+    aTitle.layer.masksToBounds = NO;
+    aTitle.layer.shadowOpacity = 0.5;
+    aTitle.layer.shadowColor = (__bridge CGColorRef)(color);
+    [aView addSubview:aTitle];
+    
+    return aView;
+}
+
+/*-(NSInteger) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+
+    return 30;
+}*/
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 30;
+}
+
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     cell.backgroundColor = [UIColor whiteColor];

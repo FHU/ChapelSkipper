@@ -9,8 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "ChapelQuotes.h"
 
+@protocol HomeViewDelegate <NSObject>
+
+- (void)logout;
+- (void)openSettings;
+
+@end
+
 @interface HomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (assign, nonatomic) id<HomeViewDelegate> delegate;
 @property (strong, nonatomic) ChapelQuotes *chapelQuotes;
 @property (strong, nonatomic) IBOutlet UILabel *absencesLabel;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;

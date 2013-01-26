@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HomeViewController.h"
 #import "ScheduleViewController.h"
 #import "QuoteViewController.h"
 
-@interface RootViewController : UIViewController
+@interface RootViewController : UIViewController <HomeViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UINavigationController *navigationController;
+@property (strong, nonatomic) IBOutlet HomeViewController *homeViewController;
 @property (strong, nonatomic) ScheduleViewController *scheduleViewController;
 @property (strong, nonatomic) QuoteViewController *quoteViewController;
 

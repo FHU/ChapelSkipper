@@ -15,6 +15,9 @@
 
 @implementation RootViewController
 @synthesize navigationController;
+@synthesize homeViewController = _homeViewController;
+@synthesize scheduleViewController = _scheduleViewController;
+@synthesize quoteViewController = _quoteViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,6 +35,7 @@
     
     [self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [self.view addSubview:navigationController.view];
+    [_homeViewController setDelegate:self];
     
     /*
     //Swipe gestures (buggy)
@@ -93,4 +97,28 @@
     
     [self.revealSideViewController pushViewController:_quoteViewController onDirection:PPRevealSideDirectionRight animated:YES];
 }
+
+#pragma mark - HomeViewDelegate
+
+- (void)logout {
+    //Ask user: Logout?
+    
+    //Return to login screen
+    LoginViewController *login;
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        login = [[LoginViewController alloc] initWithNibName:@"LoginViewController_iPhone" bundle:nil];
+    } else {
+        login = [[LoginViewController alloc] initWithNibName:@"LoginViewController_iPad" bundle:nil];
+    }
+    
+    [self.revealSideViewController popViewControllerWithNewCenterController:login animated:YES];
+    
+    //    [self presentViewController:login animated:NO completion:nil];
+}
+
+- (void)openSettings {
+    
+}
+
 @end

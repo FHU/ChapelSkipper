@@ -13,17 +13,12 @@
 #import <Social/Social.h>
 #import "LoginViewController.h"
 
-// This is defined in Math.h
-#define M_PI   3.14159265358979323846264338327950288   /* pi */
-
-// Our conversion definition
-#define DEGREES_TO_RADIANS(angle) (angle / 180.0 * M_PI)
-
 @interface HomeViewController ()
 
 @end
 
 @implementation HomeViewController
+@synthesize delegate = _delegate;
 @synthesize chapelQuotes = _chapelQuotes;
 @synthesize absencesLabel = _absencesLabel;
 @synthesize tableView = _tableView;
@@ -130,24 +125,11 @@
 }
 
 - (IBAction)logout:(id)sender {
-    //Ask user: Logout?
-    
-    //Return to login screen
-    LoginViewController *login;
-    
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        login = [[LoginViewController alloc] initWithNibName:@"LoginViewController_iPhone" bundle:nil];
-    } else {
-        login = [[LoginViewController alloc] initWithNibName:@"LoginViewController_iPad" bundle:nil];
-    }
-    
-    [self.revealSideViewController popViewControllerWithNewCenterController:login animated:YES];
-    
-    //    [self presentViewController:login animated:NO completion:nil];
+    [_delegate logout];
 }
 
 - (IBAction)openSettings:(id)sender {
-    
+    [_delegate openSettings];
 }
 
 @end

@@ -11,7 +11,13 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ChapelQuotes.h"
 #import <Social/Social.h>
-#import <QuartzCore/QuartzCore.h>
+#import "LoginViewController.h"
+
+// This is defined in Math.h
+#define M_PI   3.14159265358979323846264338327950288   /* pi */
+
+// Our conversion definition
+#define DEGREES_TO_RADIANS(angle) (angle / 180.0 * M_PI)
 
 @interface HomeViewController ()
 
@@ -21,12 +27,8 @@
 @synthesize chapelQuotes = _chapelQuotes;
 @synthesize absencesLabel = _absencesLabel;
 @synthesize tableView = _tableView;
-@synthesize quoteView = _quoteView;
-@synthesize paperclip = _paperclip;
-@synthesize quoteTextView = _quoteTextView;
 @synthesize facebookButton = _facebookButton;
 @synthesize tweetButton = _tweetButton;
-@synthesize quoteViewIsShown = _quoteViewIsShown;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,26 +44,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    //Instantiate quotes
-    _chapelQuotes = [[ChapelQuotes alloc] init];
-    
-    _quoteViewIsShown = NO;
-    
     //Border for iPad table
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         _tableView.layer.borderWidth = 1.0;
         _tableView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     }
+    
+    self.widget.layer.cornerRadius = 10.0;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    //Generate a random chapel quote
-    _quoteTextView.text = [_chapelQuotes generateRandomQuote];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -80,9 +74,7 @@
     */
     
     //Play bell sound
-    [self playSound:@"two-bells" andExtension:@"mp3"];
-    
-    [self performSelector:@selector(toggleQuoteView) withObject:nil afterDelay:0.3];
+    [self playSound:@"two-bells" andExtension:@"mp3"];    
 }
 
 #pragma mark - Custom methods
@@ -95,61 +87,20 @@
     AudioServicesPlaySystemSound (soundID);
 }
 
-- (IBAction)tappedQuoteView:(id)sender {
-    [self toggleQuoteView];
-}
-
-- (void)toggleQuoteView {
-    //Begin animation
-    [UIView beginAnimations:nil context:NULL];
-    
-    if (_quoteViewIsShown) {
-        [_quoteView setFrame:CGRectMake(_quoteView.frame.origin.x,
-                                        _quoteView.frame.origin.y + 130,
-                                        _quoteView.frame.size.width,
-                                        _quoteView.frame.size.width)];
-        [_paperclip setFrame:CGRectMake(_paperclip.frame.origin.x,
-                                        _paperclip.frame.origin.y + 130,
-                                        _paperclip.frame.size.width,
-                                        _paperclip.frame.size.height)];
-        _quoteViewIsShown = FALSE;
-        
-        self.arrowImageView.image = [UIImage imageNamed:@"circle_arrow_up"];
-    }
-    else {
-        [_quoteView setFrame:CGRectMake(_quoteView.frame.origin.x,
-                                        _quoteView.frame.origin.y - 130,
-                                        _quoteView.frame.size.width,
-                                        _quoteView.frame.size.width)];
-        [_paperclip setFrame:CGRectMake(_paperclip.frame.origin.x,
-                                        _paperclip.frame.origin.y - 130,
-                                        _paperclip.frame.size.width,
-                                        _paperclip.frame.size.height)];
-        _quoteViewIsShown = TRUE;
-        
-        self.arrowImageView.image = [UIImage imageNamed:@"circle_arrow_down"];
-    }
-    
-    
-    //Commit animation
-    [UIView setAnimationDuration:0.3];
-    [UIView commitAnimations];
-}
-
 - (IBAction)sendTweet:(id)sender {
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         
         int absences = _absencesLabel.text.intValue;
         
-        NSString *tweetString = [NSString stringWithFormat:@"I have %i chapel absences. #chapelskipper", absences];
+        NSString *tweetString = [NSString stringWithFormat:@"I have achieved %i chapel absences. #chapelskipper", absences];
         
         [tweetSheet setInitialText:tweetString];
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }
     else {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry"
-                                                            message:@"You can't send a tweet right now. Make sure your device has an internet connection and you have at least one Twitter account set up."
+                                                            message:@"You can't send a tweet. Make sure your device has an internet connection and you have a Twitter account set up."
                                                            delegate:self
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
@@ -163,7 +114,7 @@
         
         int absences = _absencesLabel.text.intValue;
         
-        NSString *fbString = [NSString stringWithFormat:@"I have %i chapel absences.", absences];
+        NSString *fbString = [NSString stringWithFormat:@"I have achieved %i chapel absences.", absences];
         
         [fbSheet setInitialText:fbString];
         [self presentViewController:fbSheet animated:YES completion:nil];
@@ -178,144 +129,25 @@
     }
 }
 
-- (IBAction)refreshQuote:(id)sender {
-    _quoteTextView.text = [_chapelQuotes generateRandomQuote];
-}
-
-#pragma mark - UITableViewDataSource
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 10;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    return @"Chapel Schedule";
-}
-
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    int sectionHeaderHeight = 30;
+- (IBAction)logout:(id)sender {
+    //Ask user: Logout?
     
-    // Create the view for the header
-    CGRect aFrame =CGRectMake(0, 0, tableView.contentSize.width, sectionHeaderHeight);
-    UIView * aView = [[UIView alloc] initWithFrame:aFrame];
-    aView.backgroundColor = UIColor.clearColor;
+    //Return to login screen
+    LoginViewController *login;
     
-    // Create a stretchable image for the background that emulates the default gradient, only in green
-    UIImage *viewBackgroundImage = [[UIImage imageNamed:@"applyButtonBackground.png"] stretchableImageWithLeftCapWidth:12 topCapHeight:0];
-    
-    // Cannot set this image directly as the background of the cell because
-    // the background needs to be offset by 1pix at the top to cover the previous cell border (Alex Deplov's requirement ^_^)
-    CALayer *backgroungLayer = [CALayer layer];
-    
-    backgroungLayer.frame = CGRectMake(0, -1, tableView.contentSize.width, sectionHeaderHeight+1);
-    backgroungLayer.contents = (id) viewBackgroundImage.CGImage;
-    backgroungLayer.masksToBounds = NO;
-    backgroungLayer.opacity = 0.9;
-    [aView.layer addSublayer:backgroungLayer];
-    
-    // Take care of the section title now
-    UILabel *aTitle = [[UILabel alloc] initWithFrame: CGRectMake(10, 0, aView.bounds.size.width-10, aView.bounds.size.height)];
-    aTitle.text = @"Chapel Schedule"; //[self tableView:tableView titleForHeaderInSection:section];
-    aTitle.textAlignment = NSTextAlignmentLeft;
-    aTitle.backgroundColor = UIColor.clearColor;
-    aTitle.font = [UIFont boldSystemFontOfSize:20];
-    aTitle.textColor = UIColor.whiteColor;
-    
-    
-    //UIColor * color = [UIColor whiteColor];
-    UIColor * color = [UIColor blackColor];
-    
-    // Text shadow
-    aTitle.layer.shadowOffset = CGSizeMake(0, 1);
-    aTitle.layer.shadowRadius = .2;
-    aTitle.layer.masksToBounds = NO;
-    aTitle.layer.shadowOpacity = 0.5;
-    aTitle.layer.shadowColor = (__bridge CGColorRef)(color);
-    [aView addSubview:aTitle];
-    
-    return aView;
-}
-
-/*-(NSInteger) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-
-    return 30;
-}*/
-
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 30;
-}
-
-
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    cell.backgroundColor = [UIColor whiteColor];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
-        
-    switch (indexPath.row) {
-        case 0:
-            cell.textLabel.text = @"Maroon and Gold Day";
-            cell.detailTextLabel.text = @"Admissions";
-            break;
-        case 1:
-            cell.textLabel.text = @"Guest Speaker";
-            cell.detailTextLabel.text = @"Larry Calendine";
-            break;
-        case 2:
-            cell.textLabel.text = @"Heaven: Jesus' Description";
-            cell.detailTextLabel.text = @"Rolland Pack";
-            break;
-        case 3:
-            cell.textLabel.text = @"Heaven: The Home of the Faithful";
-            cell.detailTextLabel.text = @"Ben Flatt";
-            break;
-        case 4:
-            cell.textLabel.text = @"Singing Day";
-            cell.detailTextLabel.text = @"Stephen Foster";
-            break;
-        case 5:
-            cell.textLabel.text = @"Student Lectureship";
-            cell.detailTextLabel.text = @"";
-            break;
-        case 6:
-            cell.textLabel.text = @"Student Lectureship";
-            cell.detailTextLabel.text = @"";
-            break;
-        case 7:
-            cell.textLabel.text = @"Student Lectureship";
-            cell.detailTextLabel.text = @"";
-            break;
-        case 8:
-            cell.textLabel.text = @"Hell: Jesus' Description";
-            cell.detailTextLabel.text = @"Jesse Robertson";
-            break;
-        case 9:
-            cell.textLabel.text = @"Hell: A Place for the Unrighteous";
-            cell.detailTextLabel.text = @"Rocco Pierce";
-            break;
-        default:
-            break;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        login = [[LoginViewController alloc] initWithNibName:@"LoginViewController_iPhone" bundle:nil];
+    } else {
+        login = [[LoginViewController alloc] initWithNibName:@"LoginViewController_iPad" bundle:nil];
     }
     
-    return cell;
+    [self.revealSideViewController popViewControllerWithNewCenterController:login animated:YES];
+    
+    //    [self presentViewController:login animated:NO completion:nil];
 }
 
-#pragma mark - UITableViewDelegate
-
-
+- (IBAction)openSettings:(id)sender {
+    
+}
 
 @end

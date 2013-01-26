@@ -14,17 +14,13 @@
 @property (strong, nonatomic) ChapelQuotes *chapelQuotes;
 @property (strong, nonatomic) IBOutlet UILabel *absencesLabel;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) IBOutlet UIView *quoteView;
-@property (strong, nonatomic) IBOutlet UIImageView *paperclip;
-@property (strong, nonatomic) IBOutlet UITextView *quoteTextView;
-@property (strong, nonatomic) IBOutlet UIImageView *arrowImageView;
 @property (strong, nonatomic) IBOutlet UIButton *facebookButton;
 @property (strong, nonatomic) IBOutlet UIButton *tweetButton;
-@property BOOL quoteViewIsShown;
+@property (strong, nonatomic) IBOutlet UIView *widget;
 
-- (IBAction)tappedQuoteView:(id)sender;
 - (IBAction)sendTweet:(id)sender;
 - (IBAction)shareFacebook:(id)sender;
-- (IBAction)refreshQuote:(id)sender;
+- (IBAction)logout:(id)sender;
+- (IBAction)openSettings:(id)sender;
 
 @end

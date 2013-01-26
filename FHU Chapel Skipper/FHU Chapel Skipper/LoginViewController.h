@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PPRevealSideViewController.h"
 
 @interface LoginViewController : UIViewController <UITextFieldDelegate>
 

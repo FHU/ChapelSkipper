@@ -10,17 +10,26 @@
 #import "LoginViewController.h"
 
 @implementation AppDelegate
+@synthesize revealSideViewController = _revealSideViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
-        self.viewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController_iPhone" bundle:nil];
-    else
-        self.viewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController_iPad" bundle:nil];
+    LoginViewController *login;
     
-    self.window.rootViewController = self.viewController;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+        login = [[LoginViewController alloc] initWithNibName:@"LoginViewController_iPhone" bundle:nil];
+    else
+        login = [[LoginViewController alloc] initWithNibName:@"LoginViewController_iPad" bundle:nil];
+    
+    //Set up the PPRevealSideViewController as the root view controller of the application
+    _revealSideViewController = [[PPRevealSideViewController alloc] initWithRootViewController:login];
+    [_revealSideViewController setDelegate:self];
+    [_revealSideViewController setDirectionsToShowBounce:PPRevealSideDirectionNone];
+    [_revealSideViewController setPanInteractionsWhenClosed:PPRevealSideInteractionNavigationBar]; //PPRevealSideInteractionContentView default
+    
+    self.window.rootViewController = self.revealSideViewController;
     [self.window makeKeyAndVisible];
     
     return YES;

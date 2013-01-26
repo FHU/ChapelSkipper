@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ScheduleViewController.h"
+#import "QuoteViewController.h"
 
 @interface RootViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UINavigationController *navigationController;
+@property (strong, nonatomic) ScheduleViewController *scheduleViewController;
+@property (strong, nonatomic) QuoteViewController *quoteViewController;
 
-- (IBAction)logout:(id)sender;
-- (IBAction)openSettings:(id)sender;
+- (IBAction)openSchedule:(id)sender;
+- (IBAction)openQuotes:(id)sender;
 
 @end

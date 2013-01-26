@@ -86,7 +86,9 @@
         main = [[RootViewController alloc] initWithNibName:@"RootViewController_iPad" bundle:nil];
     }
     
-    [self presentViewController:main animated:NO completion:nil];
+    [self.revealSideViewController popViewControllerWithNewCenterController:main animated:YES];
+    
+//    [self presentViewController:main animated:NO completion:nil];
 }
 
 - (void)unregisterForKeyboardNotifications {

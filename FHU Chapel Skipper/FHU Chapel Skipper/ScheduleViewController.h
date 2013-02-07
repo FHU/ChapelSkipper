@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Schedule.h"
+#import "ScheduleCell.h"
 
-@interface ScheduleViewController : UIViewController
+@interface ScheduleViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (strong, nonatomic) Schedule *schedule;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet ScheduleCell *scheduleCell;
+@property (strong, nonatomic) NSMutableArray *sizes;
+
+- (id)initWithSchedule:(Schedule *)schedule NibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
 
 @end

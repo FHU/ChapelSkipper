@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "LoginViewController.h"
+#import "SettingsViewController.h"
 
 @interface RootViewController ()
 
@@ -33,7 +34,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+#warning Placeholder schedule init
+    _schedule = [[Schedule alloc] init];
+    
+    [self.navigationController.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [self.view addSubview:navigationController.view];
     [_homeViewController setDelegate:self];
     
@@ -65,7 +69,7 @@
 
 - (void)preloadSideViews {
     if (!_scheduleViewController)
-        _scheduleViewController = [[ScheduleViewController alloc] initWithNibName:@"ScheduleViewController" bundle:nil];
+        _scheduleViewController = [[ScheduleViewController alloc] initWithSchedule:_schedule NibName:@"ScheduleViewController" bundle:nil];
     if (!_quoteViewController)
         _quoteViewController = [[QuoteViewController alloc] initWithNibName:@"QuoteViewController" bundle:nil];
     
@@ -86,7 +90,7 @@
 
 - (IBAction)openSchedule:(id)sender {
     if (!_scheduleViewController)
-        _scheduleViewController = [[ScheduleViewController alloc] initWithNibName:@"ScheduleViewController" bundle:nil];
+        _scheduleViewController = [[ScheduleViewController alloc] initWithSchedule:_schedule NibName:@"ScheduleViewController" bundle:nil];
     
     [self.revealSideViewController pushViewController:_scheduleViewController onDirection:PPRevealSideDirectionLeft animated:YES];
 }
@@ -102,7 +106,10 @@
 
 - (void)logout {
     //Ask user: Logout?
+    UIActionSheet *confirmation = [[UIActionSheet alloc] initWithTitle:@"Are you sure you want to log out?" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"Yes" otherButtonTitles:@"No", nil];
+    [confirmation showInView:self.view];
     
+    /*
     //Return to login screen
     LoginViewController *login;
     
@@ -114,11 +121,50 @@
     
     [self.revealSideViewController popViewControllerWithNewCenterController:login animated:YES];
     
-    //    [self presentViewController:login animated:NO completion:nil];
+    //    [self presentViewController:login animated:NO completion:nil];*/
 }
 
 - (void)openSettings {
+    if (!_settingsViewController) {
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            _settingsViewController = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController_iPhone" bundle:nil];
+        } else {
+            _settingsViewController = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController_iPad" bundle:nil];
+        }
+    }
     
+    [_settingsViewController setDelegate:self];
+    
+    [self presentViewController:_settingsViewController animated:YES completion:nil];
+}
+
+#pragma mark - SettingsDelegate
+
+- (void)celebrityMode:(BOOL)enabled {
+    if (enabled) {
+        NSLog(@"Celebrity mode enabled.");
+    }
+    else {
+        NSLog(@"Celebrity mode disabled.");
+    }
+}
+
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        //Return to login screen
+        LoginViewController *login;
+        
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            login = [[LoginViewController alloc] initWithNibName:@"LoginViewController_iPhone" bundle:nil];
+        } else {
+            login = [[LoginViewController alloc] initWithNibName:@"LoginViewController_iPad" bundle:nil];
+        }
+        
+        [self.revealSideViewController popViewControllerWithNewCenterController:login animated:YES];
+    }
+    //Else do nothing
 }
 
 @end

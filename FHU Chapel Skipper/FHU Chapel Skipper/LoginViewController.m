@@ -10,18 +10,20 @@
 #import <QuartzCore/QuartzCore.h>
 #import "SVProgressHUD.h"
 #import "RootViewController.h"
+#import "CAS.h"
 
 @interface LoginViewController ()
 
 @end
 
 @implementation LoginViewController
-@synthesize tableView;
-@synthesize loginButton;
-@synthesize applyButton;
-@synthesize logoImage;
-@synthesize loginID, password;
-@synthesize activeField;
+@synthesize tableView = _tableView;
+@synthesize loginButton = _loginButton;
+@synthesize applyButton = _applyButton;
+@synthesize logoImage = _logoImage;
+@synthesize loginID = _loginID;
+@synthesize password = _password;
+@synthesize activeField = _activeField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,10 +41,10 @@
     [self registerForKeyboardNotifications];
 
     //Style the buttons
-    [loginButton.layer setCornerRadius:5.0];
-    [loginButton.layer setMasksToBounds:YES];
-    [applyButton.layer setCornerRadius:5.0];
-    [applyButton.layer setMasksToBounds:YES];
+    [_loginButton.layer setCornerRadius:5.0];
+    [_loginButton.layer setMasksToBounds:YES];
+    [_applyButton.layer setCornerRadius:5.0];
+    [_applyButton.layer setMasksToBounds:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,15 +61,114 @@
 
 - (IBAction)login:(id)sender {
     [self.view endEditing:YES];
+    /**
+    NSString *errorMessage = @"";
+    
+    if (!_loginID.text)
+        errorMessage = @"Please enter your username";
+    if (!_password.text)
+        errorMessage = [NSString stringWithFormat:@"%@ \nPlease enter your password", errorMessage];
+    
+    if (![errorMessage isEqualToString:@""]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:errorMessage delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
     
     [SVProgressHUD show];
     //Logging in
+    NSString *username = _loginID.text;
+    NSString *password = _password.text;
+    NSString *casServer = @"https://dc02.fhu.edu";
+    NSString *casRestletPath = @"/cas/v1/tickets/";
     
+    [[CAS client] initWithCasServer:casServer
+                        restletPath:casRestletPath
+                           username:username
+                           password:password
+                    authCallbackObj:self
+               authCallbackSelector:@selector(authFinishedWithStatusCode:)];
+    /**/
     //If successful, push home controller
     [self performSelector:@selector(push) withObject:nil afterDelay:1.0];
-    
+    /**/
     //Otherwise, notify failure
     //Foghorn
+}
+
+- (void)authFinishedWithStatusCode:(NSNumber *)statusNumber {
+	int statusCode = [statusNumber intValue];
+	
+	NSLog(@"Authentication Results: %i", statusCode);
+	
+	// Handle authentication success/failures here
+	switch (statusCode) {
+		case 201:
+			[self authSuccess];
+			break;
+		case 400:
+			[self authFail:@"Invalid credentials"];
+			break;
+		case 0:
+			[self authFail:@"No connection available"];
+			break;
+		default:
+			[self authFail:@"Encountered unknown status code"];
+			break;
+	}
+}
+
+- (void)authSuccess {
+    NSLog(@"Authentication succeeded.");
+    
+    //Service URL for testing data retrieval
+	NSURL *casProtectedService = [NSURL URLWithString:@"http://host.example.com/service-request/"];
+    
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:casProtectedService];
+	[[CAS client] sendAsyncRequest:request callbackObj:self callbackSelector:@selector(requestFinishedWithDetails:)];
+}
+
+- (void)authFail:(NSString *)details {
+    [SVProgressHUD dismiss];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Authentication Failed"
+                                                    message:details
+                                                   delegate:self
+                                          cancelButtonTitle:@"Ok"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
+
+- (void)requestFinishedWithDetails:(NSMutableDictionary *)details {
+    //Check for error
+    if ([details objectForKey:@"error"]) {
+        NSLog(@"Error found");
+        return;
+    }
+    
+    //Get response
+    NSURLResponse *response = [details objectForKey:@"response"];
+    if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+        int responseCode = [(NSHTTPURLResponse *)response statusCode];
+		switch (responseCode) {
+			case 200: {
+				NSLog(@"Request returned successful");
+				NSString *responseBody = [[NSString alloc] initWithData:[details objectForKey:@"data"]
+															   encoding:NSUTF8StringEncoding];
+				NSLog(@"Response Headers: %@", [(NSHTTPURLResponse *)response allHeaderFields]);
+				NSLog(@"Response Body: %@", responseBody);
+				break;
+            }
+			case 404:
+				NSLog(@"Error: 404 not found");
+				break;
+			default: {
+				NSString *msg = [NSString stringWithFormat:@"Don't know what to do with status code: %d", responseCode];
+				NSLog(@"%@", msg);
+				break;
+			}
+        }
+    }
 }
 
 - (IBAction)apply:(id)sender {
@@ -174,23 +275,23 @@
     }
     
     //Configure the cell
-    activeField = [[UITextField alloc] initWithFrame:CGRectMake(5, 0, 260, 21)];
-    [activeField setReturnKeyType:UIReturnKeyGo];
-    [activeField setAutocorrectionType:UITextAutocorrectionTypeNo];
-    [activeField setClearButtonMode:UITextFieldViewModeWhileEditing];
+    _activeField = [[UITextField alloc] initWithFrame:CGRectMake(5, 0, 260, 21)];
+    [_activeField setReturnKeyType:UIReturnKeyGo];
+    [_activeField setAutocorrectionType:UITextAutocorrectionTypeNo];
+    [_activeField setClearButtonMode:UITextFieldViewModeWhileEditing];
     
     if (indexPath.row == 0) {
-        loginID = activeField;
-        [loginID setPlaceholder:@"Username"];
-        [loginID setDelegate:self];
-        [cell setAccessoryView:loginID];
+        _loginID = _activeField;
+        [_loginID setPlaceholder:@"Username"];
+        [_loginID setDelegate:self];
+        [cell setAccessoryView:_loginID];
     }
     if (indexPath.row == 1) {
-        password = activeField;
-        [password setPlaceholder:@"Password"];
-        [password setSecureTextEntry:YES];
-        [password setDelegate:self];
-        [cell setAccessoryView:password];
+        _password = _activeField;
+        [_password setPlaceholder:@"Password"];
+        [_password setSecureTextEntry:YES];
+        [_password setDelegate:self];
+        [cell setAccessoryView:_password];
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

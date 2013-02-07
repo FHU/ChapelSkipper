@@ -13,12 +13,15 @@
 @end
 
 @implementation ScheduleViewController
+@synthesize schedule = _schedule;
+@synthesize sizes = _sizes;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithSchedule:(Schedule *)schedule NibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        _schedule = schedule;
     }
     return self;
 }
@@ -27,12 +30,39 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    //Set sizes
+    _sizes = [[NSMutableArray alloc] init];
+    
+    for (Presentation *p in _schedule.presentations) {
+        int height = [self sizeForText:p.title];
+        [_sizes addObject:[NSNumber numberWithInt:height]];
+    }
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Custom methods
+
+- (int)sizeForText:(NSString *)text {
+    static NSString *CellIdentifier = @"Cell";
+    
+    ScheduleCell *cell = (ScheduleCell *)[self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (!cell) {
+        [[NSBundle mainBundle] loadNibNamed:@"ScheduleCell" owner:self options:nil];
+        cell = [[ScheduleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
+        cell = [self scheduleCell];
+    }
+    
+    cell.titleLabel.text = text;
+    
+    return cell.getSizedHeight;
 }
 
 #pragma mark - UITableViewDataSource
@@ -51,58 +81,29 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    ScheduleCell *cell = (ScheduleCell *)[self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        [[NSBundle mainBundle] loadNibNamed:@"ScheduleCell" owner:self options:nil];
+        cell = [[ScheduleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
+        cell = [self scheduleCell];
     }
+        
+    Presentation *p = [_schedule.presentations objectAtIndex:indexPath.row];    
+    cell.speakerLabel.text = p.speakerName;
+    cell.titleLabel.text = p.title;
     
-    switch (indexPath.row) {
-        case 0:
-            cell.textLabel.text = @"Maroon and Gold Day";
-            cell.detailTextLabel.text = @"Admissions";
-            break;
-        case 1:
-            cell.textLabel.text = @"Guest Speaker";
-            cell.detailTextLabel.text = @"Larry Calendine";
-            break;
-        case 2:
-            cell.textLabel.text = @"Heaven: Jesus' Description";
-            cell.detailTextLabel.text = @"Rolland Pack";
-            break;
-        case 3:
-            cell.textLabel.text = @"Heaven: The Home of the Faithful";
-            cell.detailTextLabel.text = @"Ben Flatt";
-            break;
-        case 4:
-            cell.textLabel.text = @"Singing Day";
-            cell.detailTextLabel.text = @"Stephen Foster";
-            break;
-        case 5:
-            cell.textLabel.text = @"Student Lectureship";
-            cell.detailTextLabel.text = @"";
-            break;
-        case 6:
-            cell.textLabel.text = @"Student Lectureship";
-            cell.detailTextLabel.text = @"";
-            break;
-        case 7:
-            cell.textLabel.text = @"Student Lectureship";
-            cell.detailTextLabel.text = @"";
-            break;
-        case 8:
-            cell.textLabel.text = @"Hell: Jesus' Description";
-            cell.detailTextLabel.text = @"Jesse Robertson";
-            break;
-        case 9:
-            cell.textLabel.text = @"Hell: A Place for the Unrighteous";
-            cell.detailTextLabel.text = @"Rocco Pierce";
-            break;
-        default:
-            break;
-    }
+    [cell sizeHeight];
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSNumber *height = [_sizes objectAtIndex:indexPath.row];
+    
+    return height.intValue;
 }
 
 #pragma mark - UITableViewDelegate

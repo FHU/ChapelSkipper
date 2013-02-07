@@ -46,21 +46,21 @@
                                    andAuthor:@"Stan Mitchell"];
     Quote *q10 = [[Quote alloc] initWithQuote:@"“I was glad when they said to me, ‘Let us go to the house of the Lord’” (Ps. 122:1)."
                                     andAuthor:@"Stan Mitchell"];
-    Quote *q11 = [[Quote alloc] initWithQuote:@"“My help comes from the Lord, who made heaven and earth” (Ps. 121:2). Do you need his help? Then worship him today."
+    Quote *q11 = [[Quote alloc] initWithQuote:@"“I will lift up my eyes to the hills. From where does my help come? My help comes from the Lord, who made heaven and earth” (Ps. 121:2). Do you need his help? Then worship him today."
                                     andAuthor:@"Stan Mitchell"];
-    Quote *q12 = [[Quote alloc] initWithQuote:@"“Ascribe to the Lord the glory due his name...” (Ps. 96:8). Is the Lord worthy of our praise today too? Then let’s enter into worship to him."
+    Quote *q12 = [[Quote alloc] initWithQuote:@"“Ascribe to the Lord, O families of the peoples, ascribe to the Lord glory and strength! Ascribe to the Lord the glory due his name …” (Ps. 96:7). Is the Lord worthy of our praise today too? Then let’s enter into worship to him."
                                     andAuthor:@"Stan Mitchell"];
-    Quote *q13 = [[Quote alloc] initWithQuote:@"The secret to failing to worship God is to forget all his blessings; the secret to worshiping him is to remember them."
+    Quote *q13 = [[Quote alloc] initWithQuote:@"“Bless the Lord, O my soul, and let all that is within me bless his holy name! Bless the Lord O my soul, and forget not all his benefits” (Ps. 103:1,2). The secret to failing to worship God is to forget all his blessings; the secret to worshiping him is to remember them."
                                     andAuthor:@"Stan Mitchell"];
-    Quote *q14 = [[Quote alloc] initWithQuote:@"“Let the redeemed of the Lord say so...” (Ps. 107:2). If the “redeemed of the Lord” do not say so, who will?"
+    Quote *q14 = [[Quote alloc] initWithQuote:@"“O give thanks to the Lord, for he is good, for his steadfast love endures forever! Let the redeemed of the Lord say so …” (Ps. 107:1,2). If the “redeemed of the Lord” do not say so, who will?"
                                     andAuthor:@"Stan Mitchell"];
-    Quote *q15 = [[Quote alloc] initWithQuote:@"“Set your minds on things that are above, not on things that are on earth” (Col. 3:2)."
+    Quote *q15 = [[Quote alloc] initWithQuote:@"“If then you have been raised with Christ, seek the things that are above … set your minds on things that are above, not on things that are on earth” (Col. 3:1,2). Today, too, we need to set our minds on things that are above."
                                     andAuthor:@"Stan Mitchell"];
-    Quote *q16 = [[Quote alloc] initWithQuote:@"Even when you’re having a truly bad day, you can worship God. Perhaps that is the day when you need to worship most of all. (Job 1:20)"
+    Quote *q16 = [[Quote alloc] initWithQuote:@"“Then Job arose and tore his robe and shaved his head and fell on the ground, and worshiped” (Job 1:20). Even when you’re having a truly bad day, you can worship God. Perhaps that is the day when you need to worship most of all."
                                     andAuthor:@"Stan Mitchell"];
     Quote *q17 = [[Quote alloc] initWithQuote:@"Chapel is an opportunity to present yourself before God with so many people alongside you doing the same thing to the best of their ability."
                                     andAuthor:@"Scott Huff"];
-    Quote *q18 = [[Quote alloc] initWithQuote:@"Fellowship is something that can disappear quickly on this earth. Best we fight to partake of it while we can."
+    Quote *q18 = [[Quote alloc] initWithQuote:@"The opportunity to present yourself before God with so many people alongside you doing the same thing to the best of their ability is something that can disappear quickly on this earth. Best we fight to partake of it while we can."
                                     andAuthor:@"Scott Huff"];
     
     
@@ -86,20 +86,64 @@
     //Celebrity Quotes
     Quote *cq1 = [[Quote alloc] initWithQuote:@"Go to chapel, you must."
                                     andAuthor:@"Yoda"];
-    Quote *cq2 = [[Quote alloc] initWithQuote:@"Skipping chapel? Bazinga!"
+    Quote *cq2 = [[Quote alloc] initWithQuote:@"Chapel you have skipped? Much to learn, you have."
+                                    andAuthor:@"Yoda"];
+    Quote *cq3 = [[Quote alloc] initWithQuote:@"Skipping chapel? Bazinga!"
                                     andAuthor:@"Sheldon Cooper"];
-    Quote *cq3 = [[Quote alloc] initWithQuote:@"It's ok to skip chapel to sleep... I'll just be over here in the corner watching you."
+    Quote *cq4 = [[Quote alloc] initWithQuote:@"It's ok to skip chapel to sleep... I'll just be over here in the corner watching you."
                                     andAuthor:@"Edward Cullen"];
-    Quote *cq4 = [[Quote alloc] initWithQuote:@"Chapel. It's like a drug to me. It's like my own personal brand of heroin."
+    Quote *cq5 = [[Quote alloc] initWithQuote:@"Chapel. It's like a drug to me. It's like my own personal brand of heroin."
                                     andAuthor:@"Edward Cullen"];
-    Quote *cq5 = [[Quote alloc] initWithQuote:@"To Chapel, and beyond!"
+    Quote *cq6 = [[Quote alloc] initWithQuote:@"To Chapel, and beyond!"
                                     andAuthor:@"Buzz Lightyear"];
-    Quote *cq6 = [[Quote alloc] initWithQuote:@"Don't be a cotton-headed ninnymuggins. Go to Chapel!"
+    Quote *cq7 = [[Quote alloc] initWithQuote:@"Don't be a cotton-headed ninnymuggins. Go to Chapel!"
                                     andAuthor:@"Buddy the Elf"];
-    Quote *cq7 = [[Quote alloc] initWithQuote:@"Chapel. Chapel is what bwings us togethew today. Chapel, that bwessed awwangement, that dweam within a dweam."
+    Quote *cq8 = [[Quote alloc] initWithQuote:@"Chapel. Chapel is what bwings us togethew today. Chapel, that bwessed awwangement, that dweam within a dweam."
                                     andAuthor:@"Impressive Clergyman"];
-    Quote *cq8 = [[Quote alloc] initWithQuote:@"Baby, baby, baby, OHHHHHH, I thought you'd always be in chapel."
+    Quote *cq9 = [[Quote alloc] initWithQuote:@"Baby, baby, baby, OHHHHHH, I thought you'd always be in chapel."
                                     andAuthor:@"Justin Bieber"];
+    Quote *cq10 = [[Quote alloc] initWithQuote:@"Ask not what chapel can do for you - ask what you can do for chapel."
+                                     andAuthor:@"John F. Kennedy"];
+    Quote *cq11 = [[Quote alloc] initWithQuote:@"Friendship is born at that moment when one person says to another: \"What! You too? I thought I was the only one that likes chapel!\""
+                                     andAuthor:@"C.S. Lewis"];
+    Quote *cq12 = [[Quote alloc] initWithQuote:@"Chapel does not, in fact, break the laws of nature."
+                                     andAuthor:@"C.S. Lewis"];
+    Quote *cq13 = [[Quote alloc] initWithQuote:@"Chapel: that most brutal of teachers. But you learn, my God do you learn."
+                                     andAuthor:@"C.S. Lewis"];
+    Quote *cq14 = [[Quote alloc] initWithQuote:@"Chapel is the best meditation."
+                                     andAuthor:@"Dalai Lama"];
+    Quote *cq15 = [[Quote alloc] initWithQuote:@"Happiness is not something ready made. It comes from chapel."
+                                     andAuthor:@"Dalai Lama"];
+    Quote *cq16 = [[Quote alloc] initWithQuote:@"A man may die, nations may rise and fall, but chapel lives on."
+                                     andAuthor:@"John F. Kennedy"];
+    Quote *cq17 = [[Quote alloc] initWithQuote:@"The best thing to hold onto in life is chapel."
+                                     andAuthor:@"Audrey Hepburn"];
+    Quote *cq18 = [[Quote alloc] initWithQuote:@"Chapel is always a good idea."
+                                     andAuthor:@"Audrey Hepburn"];
+    Quote *cq19 = [[Quote alloc] initWithQuote:@"The world is a dangerous place to live; not because of the people who are evil, but because of the people who don't go to chapel."
+                                     andAuthor:@"Albert Einstein"];
+    Quote *cq20 = [[Quote alloc] initWithQuote:@"Chapel is more important that knowledge."
+                                     andAuthor:@"Albert Einstein"];
+    Quote *cq21 = [[Quote alloc] initWithQuote:@"Look deep into chapel, and then you will understand everything better."
+                                     andAuthor:@"Albert Einstein"];
+    Quote *cq22 = [[Quote alloc] initWithQuote:@"You shall not skip!"
+                                     andAuthor:@"Gandalf"];
+    Quote *cq23 = [[Quote alloc] initWithQuote:@"A wizard is never late to chapel, Frodo Baggins. Nor is he early. He arrives precisely when he means to."
+                                     andAuthor:@"Gandalf"];
+    Quote *cq24 = [[Quote alloc] initWithQuote:@"I don't go looking for chapel. Chapel usually finds me."
+                                     andAuthor:@"Harry Potter"];
+    Quote *cq25 = [[Quote alloc] initWithQuote:@"Chapel is mankin's greatest blessing."
+                                     andAuthor:@"Mark Twain"];
+    Quote *cq26 = [[Quote alloc] initWithQuote:@"The human race has one really effective weapon, and that is chapel."
+                                     andAuthor:@"Mark Twain"];
+    Quote *cq27 = [[Quote alloc] initWithQuote:@"To be a Christian without chapel is no more possible than to be alive without breathing."
+                                     andAuthor:@"Martin Luther King, Jr."];
+    Quote *cq28 = [[Quote alloc] initWithQuote:@"I look to a day when people will not be judged by the color of their skin, but by their chapel attendance."
+                                     andAuthor:@"Martin Luther King, Jr."];
+    Quote *cq29 = [[Quote alloc] initWithQuote:@"Chapel is the first chapter in the book of wisdom."
+                                     andAuthor:@"Thomas Jefferson"];
+    Quote *cq30 = [[Quote alloc] initWithQuote:@"Chapel is a little thing that makes a big difference."
+                                     andAuthor:@"Winston Churchill"];
     
     [_celebrityQuotes addObject:cq1];
     [_celebrityQuotes addObject:cq2];
@@ -109,6 +153,28 @@
     [_celebrityQuotes addObject:cq6];
     [_celebrityQuotes addObject:cq7];
     [_celebrityQuotes addObject:cq8];
+    [_celebrityQuotes addObject:cq9];
+    [_celebrityQuotes addObject:cq10];
+    [_celebrityQuotes addObject:cq11];
+    [_celebrityQuotes addObject:cq12];
+    [_celebrityQuotes addObject:cq13];
+    [_celebrityQuotes addObject:cq14];
+    [_celebrityQuotes addObject:cq15];
+    [_celebrityQuotes addObject:cq16];
+    [_celebrityQuotes addObject:cq17];
+    [_celebrityQuotes addObject:cq18];
+    [_celebrityQuotes addObject:cq19];
+    [_celebrityQuotes addObject:cq20];
+    [_celebrityQuotes addObject:cq21];
+    [_celebrityQuotes addObject:cq22];
+    [_celebrityQuotes addObject:cq23];
+    [_celebrityQuotes addObject:cq24];
+    [_celebrityQuotes addObject:cq25];
+    [_celebrityQuotes addObject:cq26];
+    [_celebrityQuotes addObject:cq27];
+    [_celebrityQuotes addObject:cq28];
+    [_celebrityQuotes addObject:cq29];
+    [_celebrityQuotes addObject:cq30];
 }
 
 - (NSString *)generateRandomQuote {

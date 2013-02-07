@@ -25,6 +25,9 @@
 @property (strong, nonatomic) IBOutlet UIButton *facebookButton;
 @property (strong, nonatomic) IBOutlet UIButton *tweetButton;
 @property (strong, nonatomic) IBOutlet UIView *widget;
+@property (strong, nonatomic) IBOutlet UILabel *userLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *speakerImageView;
+@property (strong, nonatomic) IBOutlet UITextView *quoteTextView;
 
 - (IBAction)sendTweet:(id)sender;
 - (IBAction)shareFacebook:(id)sender;

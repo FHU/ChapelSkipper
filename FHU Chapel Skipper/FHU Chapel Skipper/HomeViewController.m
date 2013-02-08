@@ -24,6 +24,10 @@
 @synthesize tableView = _tableView;
 @synthesize facebookButton = _facebookButton;
 @synthesize tweetButton = _tweetButton;
+@synthesize absenceModeButton = _absenceModeButton;
+@synthesize absenceModeLabel = _absenceModeLabel;
+@synthesize isShowingAbsencesAchieved = _isShowingAbsencesAchieved;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,6 +45,8 @@
     
     NSString *fullName = @"";
     //fullName = user.name;
+    
+    self.isShowingAbsencesAchieved = YES;
     
     _userLabel.text = [NSString stringWithFormat:@"Logged in as %@", fullName];
     
@@ -135,6 +141,43 @@
 
 - (IBAction)openSettings:(id)sender {
     [_delegate openSettings];
+}
+
+- (IBAction)absenceModeButton:(id)sender {
+    
+    [self toggleAbsenceMode];
+    
+}
+
+-(void) toggleAbsenceMode {
+    int MAX_ALLOWED_ABSENCES = 12;
+    
+    if(self.isShowingAbsencesAchieved) {
+        // Toggle to show absences remaining.
+        self.isShowingAbsencesAchieved = NO;
+        int absencesAchieved = _absencesLabel.text.intValue;
+        
+        int absencesRemaining = MAX_ALLOWED_ABSENCES - absencesAchieved;
+        
+        self.absencesLabel.text = [NSString stringWithFormat:@"%i", absencesRemaining];
+        self.absenceModeLabel.text = @"ABSENCES LEFT";
+        self.absenceModeLabel.textColor = [UIColor yellowColor];
+        
+    }
+    else {
+        // Toggle to show absences acheived.
+        self.isShowingAbsencesAchieved = YES;
+        
+        int absencesRemaining = _absencesLabel.text.intValue;
+        
+        int absencesAchieved = MAX_ALLOWED_ABSENCES - absencesRemaining;
+        
+        self.absencesLabel.text = [NSString stringWithFormat:@"%i", absencesAchieved];
+        self.absenceModeLabel.text = @"ABSENCES ACHIEVED";
+        self.absenceModeLabel.textColor = [UIColor whiteColor];
+        
+    }
+    
 }
 
 #pragma mark - UITableViewDataSource

@@ -132,7 +132,7 @@
                                      andAuthor:@"Gandalf"];
     Quote *cq24 = [[Quote alloc] initWithQuote:@"I don't go looking for chapel. Chapel usually finds me."
                                      andAuthor:@"Harry Potter"];
-    Quote *cq25 = [[Quote alloc] initWithQuote:@"Chapel is mankin's greatest blessing."
+    Quote *cq25 = [[Quote alloc] initWithQuote:@"Chapel is mankind's greatest blessing."
                                      andAuthor:@"Mark Twain"];
     Quote *cq26 = [[Quote alloc] initWithQuote:@"The human race has one really effective weapon, and that is chapel."
                                      andAuthor:@"Mark Twain"];
@@ -144,6 +144,10 @@
                                      andAuthor:@"Thomas Jefferson"];
     Quote *cq30 = [[Quote alloc] initWithQuote:@"Chapel is a little thing that makes a big difference."
                                      andAuthor:@"Winston Churchill"];
+    Quote *cq31 = [[Quote alloc] initWithQuote:@"That's my secret, Cap: I go to chapel."
+                                     andAuthor:@"Bruce Banner"];
+    Quote *cq32 = [[Quote alloc] initWithQuote:@"There's only one God, ma'am, and I'm pretty sure he goes to chapel."
+                                     andAuthor:@"Steve Rogers"];
     
     [_celebrityQuotes addObject:cq1];
     [_celebrityQuotes addObject:cq2];
@@ -175,9 +179,11 @@
     [_celebrityQuotes addObject:cq28];
     [_celebrityQuotes addObject:cq29];
     [_celebrityQuotes addObject:cq30];
+    [_celebrityQuotes addObject:cq31];
+    [_celebrityQuotes addObject:cq32];
 }
 
-- (NSString *)generateRandomQuote {
+- (Quote *)generateRandomQuote {
     if (!_quotes || !_celebrityQuotes) {
         [self initQuotesArrays];
     }
@@ -195,7 +201,7 @@
         q = [_celebrityQuotes objectAtIndex:index];
     }
     
-    return q.quote;
+    return q;
 }
 
 - (int)randomIntBetween:(int)low And:(int)high {

@@ -93,6 +93,8 @@
     Presentation *p = [_schedule.presentations objectAtIndex:indexPath.row];    
     cell.speakerLabel.text = p.speakerName;
     cell.titleLabel.text = p.title;
+#warning Placeholder data
+    cell.dateLabel.text = [NSString stringWithFormat:@"%d", indexPath.row + 1];
     
     [cell sizeHeight];
     

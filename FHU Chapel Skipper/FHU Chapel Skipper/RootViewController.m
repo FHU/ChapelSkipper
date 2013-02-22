@@ -141,12 +141,7 @@
 #pragma mark - SettingsDelegate
 
 - (void)celebrityMode:(BOOL)enabled {
-    if (enabled) {
-        NSLog(@"Celebrity mode enabled.");
-    }
-    else {
-        NSLog(@"Celebrity mode disabled.");
-    }
+    [_quoteViewController.chapelQuotes setCelebrityEnabled:enabled];
 }
 
 #pragma mark - UIActionSheetDelegate

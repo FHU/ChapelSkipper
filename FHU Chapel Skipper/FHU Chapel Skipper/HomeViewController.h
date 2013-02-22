@@ -28,10 +28,13 @@
 @property (strong, nonatomic) IBOutlet UILabel *userLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *speakerImageView;
 @property (strong, nonatomic) IBOutlet UITextView *quoteTextView;
+@property (strong, nonatomic) IBOutlet UILabel *absenceModeLabel;
+@property BOOL absenceModeAchieved;
 
 - (IBAction)sendTweet:(id)sender;
 - (IBAction)shareFacebook:(id)sender;
 - (IBAction)logout:(id)sender;
 - (IBAction)openSettings:(id)sender;
+- (IBAction)toggleAbsenceMode:(id)sender;
 
 @end

@@ -29,7 +29,7 @@
     // Do any additional setup after loading the view from its nib.
     
     _chapelQuotes = [[ChapelQuotes alloc] init];
-    _quoteTextView.text = [_chapelQuotes generateRandomQuote];
+    [self refreshQuote:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,7 +41,10 @@
 #pragma mark - Custom methods
 
 - (IBAction)refreshQuote:(id)sender {
-    _quoteTextView.text = [_chapelQuotes generateRandomQuote];
+    Quote *q = [_chapelQuotes generateRandomQuote];
+    
+    _quoteTextView.text = q.quote;
+    _authorLabel.text = q.author;
 }
 
 @end

@@ -32,12 +32,7 @@
 - (int)getSizedHeight {
     [_titleLabel sizeToFit];
     
-    return _titleLabel.frame.size.height + 55;
-    
-    if (_titleLabel.frame.size.height < 30)
-        return 96;
-    else
-        return _titleLabel.frame.size.height + 50;
+    return _titleLabel.frame.size.height + 55;    
 }
 
 - (void)sizeHeight {

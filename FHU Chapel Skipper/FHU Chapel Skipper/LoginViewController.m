@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import <AudioToolbox/AudioToolbox.h>
 #import "SVProgressHUD.h"
 #import "RootViewController.h"
 #import "CAS.h"
@@ -190,6 +191,15 @@
     [self.revealSideViewController popViewControllerWithNewCenterController:main animated:YES];
     
 //    [self presentViewController:main animated:NO completion:nil];
+    [self playSound:@"two-bells" andExtension:@"mp3"];
+}
+
+/* http://stackoverflow.com/questions/10329291/play-a-short-sound-in-ios */
+- (void)playSound:(NSString *)fileName andExtension:(NSString *)extension {
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:fileName ofType:extension];
+    SystemSoundID soundID;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:soundPath], &soundID);
+    AudioServicesPlaySystemSound (soundID);
 }
 
 - (void)unregisterForKeyboardNotifications {

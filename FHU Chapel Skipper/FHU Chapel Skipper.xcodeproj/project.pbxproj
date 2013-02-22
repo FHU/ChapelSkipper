@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF0D873E16C9DF5400A6B175 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0D873C16C9DF5400A6B175 /* calendar.png */; };
+		AF0D873F16C9DF5400A6B175 /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0D873D16C9DF5400A6B175 /* calendar@2x.png */; };
 		AF1275B716307FDB000C25C9 /* shipdeck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF1275B616307FDB000C25C9 /* shipdeck.jpg */; };
 		AF1CA232161530010015970A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1CA230161530010015970A /* RootViewController.m */; };
 		AF1CA233161530010015970A /* RootViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF1CA231161530010015970A /* RootViewController_iPhone.xib */; };
@@ -38,6 +40,7 @@
 		AF26B16516C436B400FB71FA /* shipdeck_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF26B16316C436B400FB71FA /* shipdeck_iPad@2x.png */; };
 		AF26B17216C456E800FB71FA /* ScheduleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF26B17016C456E700FB71FA /* ScheduleCell.m */; };
 		AF26B17316C456E800FB71FA /* ScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF26B17116C456E700FB71FA /* ScheduleCell.xib */; };
+		AF28CB2316D7E6A000DC7065 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF28CB2216D7E6A000DC7065 /* Default-568h@2x.png */; };
 		AF2EE8DA1614C810004DADF3 /* LoginViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2EE8D91614C810004DADF3 /* LoginViewController_iPad.xib */; };
 		AF2EE8DE1614C820004DADF3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2EE8DC1614C820004DADF3 /* LoginViewController.m */; };
 		AF2EE8DF1614C820004DADF3 /* LoginViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2EE8DD1614C820004DADF3 /* LoginViewController_iPhone.xib */; };
@@ -140,6 +143,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF0D873C16C9DF5400A6B175 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
+		AF0D873D16C9DF5400A6B175 /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
 		AF1275B616307FDB000C25C9 /* shipdeck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shipdeck.jpg; sourceTree = "<group>"; };
 		AF1CA22F161530010015970A /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		AF1CA230161530010015970A /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
@@ -174,6 +179,7 @@
 		AF26B16F16C456E700FB71FA /* ScheduleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleCell.h; sourceTree = "<group>"; };
 		AF26B17016C456E700FB71FA /* ScheduleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleCell.m; sourceTree = "<group>"; };
 		AF26B17116C456E700FB71FA /* ScheduleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleCell.xib; sourceTree = "<group>"; };
+		AF28CB2216D7E6A000DC7065 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../Default-568h@2x.png"; sourceTree = "<group>"; };
 		AF2EE8D91614C810004DADF3 /* LoginViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController_iPad.xib; sourceTree = "<group>"; };
 		AF2EE8DB1614C820004DADF3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		AF2EE8DC1614C820004DADF3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -359,6 +365,8 @@
 			children = (
 				AF22ACFE16B3B29F00D4C207 /* launch images */,
 				AF9F1A6116B3A8EE0032F5C0 /* app icons */,
+				AF0D873C16C9DF5400A6B175 /* calendar.png */,
+				AF0D873D16C9DF5400A6B175 /* calendar@2x.png */,
 				AF22ACF616B3AC2700D4C207 /* schedule.png */,
 				AF22ACF716B3AC2700D4C207 /* schedule@2x.png */,
 				AF22ACED16B3AB7500D4C207 /* quote.png */,
@@ -421,6 +429,7 @@
 			children = (
 				AF22ACFA16B3B23700D4C207 /* Default.png */,
 				AF22ACFB16B3B23700D4C207 /* Default@2x.png */,
+				AF28CB2216D7E6A000DC7065 /* Default-568h@2x.png */,
 			);
 			name = "launch images";
 			sourceTree = "<group>";
@@ -828,6 +837,9 @@
 				AF26B16416C436B400FB71FA /* shipdeck_iPad.png in Resources */,
 				AF26B16516C436B400FB71FA /* shipdeck_iPad@2x.png in Resources */,
 				AF26B17316C456E800FB71FA /* ScheduleCell.xib in Resources */,
+				AF0D873E16C9DF5400A6B175 /* calendar.png in Resources */,
+				AF0D873F16C9DF5400A6B175 /* calendar@2x.png in Resources */,
+				AF28CB2316D7E6A000DC7065 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

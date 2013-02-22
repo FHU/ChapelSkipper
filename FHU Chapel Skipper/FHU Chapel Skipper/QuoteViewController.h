@@ -14,6 +14,7 @@
 @property (strong, nonatomic) ChapelQuotes *chapelQuotes;
 @property (strong, nonatomic) IBOutlet UITextView *quoteTextView;
 @property (strong, nonatomic) IBOutlet UIImageView *portraitImageView;
+@property (strong, nonatomic) IBOutlet UILabel *authorLabel;
 
 - (IBAction)refreshQuote:(id)sender;
 

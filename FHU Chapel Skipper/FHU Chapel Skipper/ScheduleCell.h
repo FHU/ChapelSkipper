@@ -10,6 +10,7 @@
 
 @interface ScheduleCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UILabel *dateLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *dateImageView;
 @property (strong, nonatomic) IBOutlet UILabel *speakerLabel;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;

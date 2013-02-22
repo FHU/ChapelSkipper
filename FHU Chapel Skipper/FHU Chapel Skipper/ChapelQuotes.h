@@ -15,6 +15,6 @@
 @property (strong, nonatomic) NSMutableArray *celebrityQuotes;
 @property BOOL celebrityEnabled;
 
-- (NSString *)generateRandomQuote;
+- (Quote *)generateRandomQuote;
 
 @end

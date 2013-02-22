@@ -7,7 +7,6 @@
 // test change
 
 #import "HomeViewController.h"
-#import <AudioToolbox/AudioToolbox.h>
 #import <QuartzCore/QuartzCore.h>
 #import "ChapelQuotes.h"
 #import <Social/Social.h>
@@ -39,7 +38,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    NSString *fullName = @"";
+    NSString *fullName = @"Richard Simpson";
     //fullName = user.name;
     
     _userLabel.text = [NSString stringWithFormat:@"Logged in as %@", fullName];
@@ -51,6 +50,8 @@
     }
     
     self.widget.layer.cornerRadius = 10.0;
+    
+    _absenceModeAchieved = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,34 +59,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    //Consider looping a single bell sound for each absence.
-    /*
-    int absences = [self.absencesLabel.text intValue];
-    
-    for (int count = 0; count < absences; count++) {
-        //Play the sound
-        [self playSound:@"oneBell" andExtension:@"mp3"];
-        
-        //Count the number along the way?
-        //animate number change
-    }
-    */
-    
-    //Play bell sound
-    [self playSound:@"two-bells" andExtension:@"mp3"];    
-}
-
 #pragma mark - Custom methods
-
-/* http://stackoverflow.com/questions/10329291/play-a-short-sound-in-ios */
-- (void)playSound:(NSString *)fileName andExtension:(NSString *)extension {
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:fileName ofType:extension];
-    SystemSoundID soundID;
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:soundPath], &soundID);
-    AudioServicesPlaySystemSound (soundID);
-}
 
 - (IBAction)sendTweet:(id)sender {
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
@@ -94,6 +68,9 @@
         int absences = _absencesLabel.text.intValue;
         
         NSString *tweetString = [NSString stringWithFormat:@"I have achieved %i chapel absences. #chapelskipper", absences];
+        
+        if (!_absenceModeAchieved)
+            tweetString = [NSString stringWithFormat:@"I have %i chapel absences remaining. #chapelskipper", absences];
         
         [tweetSheet setInitialText:tweetString];
         [self presentViewController:tweetSheet animated:YES completion:nil];
@@ -116,6 +93,9 @@
         
         NSString *fbString = [NSString stringWithFormat:@"I have achieved %i chapel absences.", absences];
         
+        if (!_absenceModeAchieved)
+            fbString = [NSString stringWithFormat:@"I have %i chapel absences remaining.", absences];
+        
         [fbSheet setInitialText:fbString];
         [self presentViewController:fbSheet animated:YES completion:nil];
     }
@@ -135,6 +115,49 @@
 
 - (IBAction)openSettings:(id)sender {
     [_delegate openSettings];
+}
+
+- (IBAction)toggleAbsenceMode:(id)sender {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDelegate:self];
+    
+    [_absencesLabel setAlpha:0];
+    [_absenceModeLabel setAlpha:0];
+    
+    [UIView setAnimationDuration:0.1];
+    [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:)];
+    [UIView commitAnimations];
+}
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
+    [UIView beginAnimations:nil context:NULL];
+    
+    [_absencesLabel setAlpha:1.0];
+    [_absenceModeLabel setAlpha:1.0];
+    
+    [UIView setAnimationDuration:0.1];
+    [UIView commitAnimations];
+    
+    int maxAbsences = 12;
+    int absencesAchieved = _absencesLabel.text.intValue;
+    UIColor *color;
+    
+    if (_absenceModeAchieved) {
+        //Show remaining absences
+        _absenceModeAchieved = NO;
+        _absenceModeLabel.text = @"ABSENCES REMAINING";
+        color = [UIColor colorWithRed:0.855 green:0.78 blue:0.624 alpha:1]; /*#dac79f*/
+        
+    } else {
+        //Show acquired absences
+        _absenceModeAchieved = YES;
+        _absenceModeLabel.text = @"ABSENCES ACHIEVED";
+        color = [UIColor whiteColor];
+    }
+    
+    _absencesLabel.text = [NSString stringWithFormat:@"%i", maxAbsences - absencesAchieved];
+    _absencesLabel.textColor = color;
+    _absenceModeLabel.textColor = color;
 }
 
 #pragma mark - UITableViewDataSource
